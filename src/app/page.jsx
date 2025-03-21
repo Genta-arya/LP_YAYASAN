@@ -22,17 +22,17 @@ const page = () => {
       <ScrollFadeIn direction="bottom" amount={0.1}>
         <ProgramUnggulan />
       </ScrollFadeIn>
-      <ScrollFadeIn direction="right" amount={0.3}>
+      <ScrollFadeIn direction="right" amount={0.2}>
         <TentangKami />
       </ScrollFadeIn>
-      <ScrollFadeIn direction="left" amount={0.3}>
+      <ScrollFadeIn direction="left" amount={0.2}>
         <UnitPendidikan />
       </ScrollFadeIn>
-      <ScrollFadeIn direction="bottom" amount={0.3}>
+      <ScrollFadeIn direction="bottom" amount={0.2}>
         <JumlahPengajar />
       </ScrollFadeIn>
       <Pendaftaran />
-      <ScrollFadeIn direction="bottom" amount={0.3}>
+      <ScrollFadeIn direction="bottom" amount={0.2}>
         <LokasiMap />
       </ScrollFadeIn>
       <Modal />
