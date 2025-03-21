@@ -10,22 +10,22 @@ const units = [
   {
     title: "PAUD Al Jihad",
     description: "Pendidikan usia dini dengan pendekatan Islami & kreatif.",
-    icon: <Baby className="w-12 h-12 text-pink-500 mb-4" />,
+    icon: <Baby className="w-16 h-16 text-pink-500" />,
   },
   {
     title: "TPQ Al Jihad",
     description: "Belajar Al-Qur'an dengan metode yang menyenangkan.",
-    icon: <BookOpen className="w-12 h-12 text-green-500 mb-4" />,
+    icon: <BookOpen className="w-16 h-16 text-green-500" />,
   },
   {
     title: "SMP Islamiyyah Al Jihad",
     description: "Membangun karakter dan prestasi di tingkat menengah.",
-    image: "/LOGO-SMP.jpg", // Pastikan ada di folder /public
+    image: "/LOGO-SMP.jpg",
   },
   {
     title: "SMA Islamiyyah Al Jihad",
     description: "Menyiapkan generasi Qurani, berprestasi, siap kuliah & kerja.",
-    image: "/LOGO-SMA.jpg", // Pastikan ada di folder /public
+    image: "/LOGO-SMA.jpg",
   },
 ];
 
@@ -41,21 +41,25 @@ const UnitPendidikan = () => {
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {units.map((unit, index) => (
-            <Card key={index} className="flex flex-col items-center p-6 shadow-md hover:shadow-lg transition">
-              {unit.icon ? (
-                unit.icon
-              ) : (
-                <Image
-                  src={unit.image}
-                  alt={unit.title}
-                  width={64}
-                  height={64}
-                  className="mb-4"
-                />
-              )}
-              <CardContent className="text-center">
-                <h3 className="text-xl font-semibold mb-2">{unit.title}</h3>
-                <p className="text-gray-600 mb-4">{unit.description}</p>
+            <Card key={index} className="flex flex-col items-center p-6 shadow-md hover:shadow-lg transition min-h-[350px]">
+              <div className="w-20 h-20 flex items-center justify-center mb-4">
+                {unit.icon ? (
+                  unit.icon
+                ) : (
+                  <Image
+                    src={unit.image}
+                    alt={unit.title}
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+                )}
+              </div>
+              <CardContent className="text-center flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">{unit.title}</h3>
+                  <p className="text-gray-600 mb-4">{unit.description}</p>
+                </div>
                 <Button variant="outline">Lihat Detail</Button>
               </CardContent>
             </Card>

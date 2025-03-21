@@ -122,7 +122,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
                 : "hover:bg-gray-100"
             }`}
           >
-            Artikel
+           Berita
           </a>
         </li>
 

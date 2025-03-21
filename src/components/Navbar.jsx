@@ -56,8 +56,8 @@ const Navbar = () => {
                     href="/"
                     className={`${TextTitle} font-semibold ${
                       isActive("/")
-                        ? "text-green-800 border-b-4 border-green-600"
-                        : "text-black "
+                        ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
+                        : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
                     Beranda
@@ -132,12 +132,10 @@ const Navbar = () => {
                   <NavigationMenuLink
                     href="/#"
                     className={`${TextTitle} font-semibold ${
-                      isActive("/artikel")
-                        ? "text-green-800 border-b-4 border-green-600"
-                        : "text-black "
+                      isActive("/artikel") ? "bg-gray-200" : "hover:bg-gray-100"
                     }`}
                   >
-                    Artikel
+                    Berita
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -146,8 +144,8 @@ const Navbar = () => {
                     href="/#"
                     className={`${TextTitle} font-semibold ${
                       isActive("/video-corner")
-                        ? "text-blue-600 underline"
-                        : "text-black hover:underline"
+                        ? "bg-gray-200"
+                        : "hover:bg-gray-100"
                     }`}
                   >
                     Gallery
@@ -158,9 +156,7 @@ const Navbar = () => {
                   <NavigationMenuLink
                     href="/#"
                     className={`${TextTitle} font-semibold ${
-                      isActive("/kontak")
-                        ? "text-blue-600 underline"
-                        : "text-black hover:underline"
+                      isActive("/kontak") ? "bg-gray-200" : "hover:bg-gray-100"
                     }`}
                   >
                     Kontak
