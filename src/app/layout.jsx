@@ -24,11 +24,43 @@ const merriweather = Merriweather({
 export const metadata = {
   title: "Yayasan AL-JIHAD | Ketapang Kalimantan Barat",
   description: "Sekolah unggul berbasis akhlak & prestasi",
+  icons: {
+    icon: "/LOGO-SMP.ico", // Letakkan favicon.ico di /public
+  },
+  openGraph: {
+    title: "Yayasan Islamiyyah Al Jihad Ketapang",
+    description: "Sekolah unggul berbasis akhlak & prestasi",
+    url: "https://al-jihad-center.vercel.app/",
+    siteName: "Yayasan Islamiyyah Al Jihad Ketapang",
+    images: [
+      {
+        url: "/LOGO-SMP.jpg", // Pastikan file og-image.jpg ada di /public
+        width: 1200,
+        height: 630,
+        alt: "Yayasan Islamiyyah Al Jihad Ketapang",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yayasan Islamiyyah Al Jihad Ketapang",
+    description: "Sekolah unggul berbasis akhlak & prestasi",
+    images: ["/LOGO-SMP.jpg"],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
+      <head>
+        {/* Link tambahan jika perlu custom font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${inter.variable} ${merriweather.variable} antialiased flex flex-col min-h-screen`}
         style={{
@@ -36,14 +68,8 @@ export default function RootLayout({ children }) {
         }}
       >
         <Navbar />
-
         <main className="flex-1">{children}</main>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
-          rel="stylesheet"
-        />
         <ScrollToTopButton />
-
         <Footer />
       </body>
     </html>
