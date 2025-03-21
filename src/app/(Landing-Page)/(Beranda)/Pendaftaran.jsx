@@ -7,7 +7,7 @@ const Pendaftaran = () => {
       className="relative bg-fixed 2xl:bg-[center_top_900px] md:bg-[center_top_360px] bg-[center_top_100px] pt-5  lg:bg-[center_top_1050px]
   bg-cover w-full 2xl:h-[400px] h-[300px] flex items-center justify-center"
       style={{
-        backgroundImage: "url(/sample.jpg)",
+        backgroundImage: "url(/Sample.jpg)",
       }}
     >
       <div className="absolute inset-0 bg-black/60"></div>
