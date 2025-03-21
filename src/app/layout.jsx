@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: "Yayasan Islamiyyah Al Jihad Ketapang",
     description: "Sekolah unggul berbasis akhlak & prestasi",
-    url: "https://al-jihad-center.vercel.app/",
+    url: "al-jihad.center.mgentaarya.my.id/",
     siteName: "Yayasan Islamiyyah Al Jihad Ketapang",
     images: [
       {
