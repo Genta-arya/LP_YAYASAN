@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { School, BookOpen, Baby, Book } from "lucide-react";
 import Pembatas from "@/components/Pembatas";
+import Image from "next/image";
 
 const units = [
   {
@@ -19,12 +20,12 @@ const units = [
   {
     title: "SMP Islamiyyah Al Jihad",
     description: "Membangun karakter dan prestasi di tingkat menengah.",
-    icon: <School className="w-12 h-12 text-blue-500 mb-4" />,
+    image: "/LOGO-SMP.jpg", // Pastikan ada di folder /public
   },
   {
     title: "SMA Islamiyyah Al Jihad",
     description: "Menyiapkan generasi Qurani, berprestasi, siap kuliah & kerja.",
-    icon: <Book className="w-12 h-12 text-yellow-500 mb-4" />,
+    image: "/LOGO-SMA.jpg", // Pastikan ada di folder /public
   },
 ];
 
@@ -41,7 +42,17 @@ const UnitPendidikan = () => {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {units.map((unit, index) => (
             <Card key={index} className="flex flex-col items-center p-6 shadow-md hover:shadow-lg transition">
-              {unit.icon}
+              {unit.icon ? (
+                unit.icon
+              ) : (
+                <Image
+                  src={unit.image}
+                  alt={unit.title}
+                  width={64}
+                  height={64}
+                  className="mb-4"
+                />
+              )}
               <CardContent className="text-center">
                 <h3 className="text-xl font-semibold mb-2">{unit.title}</h3>
                 <p className="text-gray-600 mb-4">{unit.description}</p>
