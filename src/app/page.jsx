@@ -19,20 +19,20 @@ const page = () => {
     <div>
       {" "}
       <Slider />
-      <ScrollFadeIn direction="bottom">
+      <ScrollFadeIn direction="bottom" amount={0.1}>
         <ProgramUnggulan />
       </ScrollFadeIn>
-      <ScrollFadeIn direction="right">
+      <ScrollFadeIn direction="right" amount={0.3}>
         <TentangKami />
       </ScrollFadeIn>
-      <ScrollFadeIn direction="left">
+      <ScrollFadeIn direction="left" amount={0.3}>
         <UnitPendidikan />
       </ScrollFadeIn>
-      <ScrollFadeIn direction="bottom">
+      <ScrollFadeIn direction="bottom" amount={0.3}>
         <JumlahPengajar />
       </ScrollFadeIn>
       <Pendaftaran />
-      <ScrollFadeIn direction="bottom">
+      <ScrollFadeIn direction="bottom" amount={0.3}>
         <LokasiMap />
       </ScrollFadeIn>
       <Modal />

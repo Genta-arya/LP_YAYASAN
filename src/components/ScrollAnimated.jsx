@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useMemo, useState, useEffect } from "react";
 
-const ScrollFadeIn = ({ children, direction = "bottom" }) => {
+const ScrollFadeIn = ({ children, direction = "bottom" , amount }) => {
   const [mounted, setMounted] = useState(false);
 
   const initialPosition = useMemo(() => {
@@ -45,7 +45,7 @@ const ScrollFadeIn = ({ children, direction = "bottom" }) => {
         y: initialPosition.y,
       }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false, amount: amount }}
       transition={{
         duration: 0.6,
         ease: "easeOut",
