@@ -3,11 +3,11 @@ import React from "react";
 import {
   FaQuran,
   FaChild,
-  FaGlobe,
   FaChalkboardTeacher,
   FaBook,
-  FaHandsHelping,
 } from "react-icons/fa";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import Pembatas from "@/components/Pembatas";
 
 const programs = [
   {
@@ -23,32 +23,31 @@ const programs = [
   {
     icon: <FaBook size={40} className="text-blue-500 mb-3" />,
     title: "Baca Kitab",
-    description: "Kelas bilingual untuk mengasah kemampuan global.",
+    description: "Mempelajari kitab-kitab klasik untuk memperdalam ilmu agama.",
   },
   {
     icon: <FaChalkboardTeacher size={40} className="text-purple-500 mb-3" />,
-    title: "Belajar Bahasa Inggris & Bahasa Arab",
-    description: "Pembelajaran berbasis teknologi untuk mendukung era digital.",
+    title: "Bahasa Inggris & Arab",
+    description: "Pembelajaran bahasa asing untuk mendukung era globalisasi.",
   },
 ];
 
 const ProgramUnggulan = () => {
   return (
     <div className="py-12 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-10">Program Yayasan</h2>
-      <div className="border-b-4 border-green-600 w-96 mx-auto mb-12"></div>
+      <h2 className="text-3xl font-bold text-center mb-10 text-green-800">Program Unggulan</h2>
+     <Pembatas />
 
-      {/* Grid 3 kolom */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+      <div className=" container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3   px-4">
         {programs.map((program, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl shadow-md px-2 py-12 text-center hover:shadow-lg transition"
-          >
-            <p className="flex justify-center">{program.icon}</p>
-            <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
-            <p className="text-gray-700">{program.description}</p>
-          </div>
+          <Card key={index} className="text-center hover:shadow-lg transition">
+            <CardHeader className="flex flex-col items-center">
+              {program.icon}
+              <CardTitle>{program.title}</CardTitle>
+              <CardDescription>{program.description}</CardDescription>
+            </CardHeader>
+            <CardContent></CardContent>
+          </Card>
         ))}
       </div>
     </div>

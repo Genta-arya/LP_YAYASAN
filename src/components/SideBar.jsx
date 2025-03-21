@@ -9,7 +9,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
 
   return (
     <div
-      className={`fixed overflow-auto  top-0 left-0 h-full w-60 md:w-80 bg-white shadow-xl transform ${
+      className={`fixed overflow-auto  top-0 left-0 h-full w-60 md:w-80 z-50 bg-white shadow-xl transform ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 z-50`}
     >
@@ -65,7 +65,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
           >
             <li>
               <a
-                href="/tentang-kami"
+                href="/#"
                 className={`block px-3 py-2 rounded-md ${
                   isActive("/tentang-kami")
                     ? "bg-green-50 text-green-800"
@@ -77,7 +77,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
             </li>
             <li>
               <a
-                href="/sejarah"
+                href="/#"
                 className={`block px-3 py-2 rounded-md ${
                   isActive("/sejarah")
                     ? "bg-green-50 text-green-800"
@@ -89,7 +89,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
             </li>
             <li>
               <a
-                href="/arsip"
+                href="/#"
                 className={`block px-3 py-2 rounded-md ${
                   isActive("/arsip")
                     ? "bg-green-50 text-green-800"
@@ -101,7 +101,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
             </li>
             <li>
               <a
-                href="/visi-misi"
+                href="/#"
                 className={`block px-3 py-2 rounded-md ${
                   isActive("/visi-misi")
                     ? "bg-green-50 text-green-800"
@@ -130,7 +130,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
 
         <li>
           <a
-            href="/video-corner"
+            href="/#"
             className={`block px-3 py-2 rounded-lg transition ${
               isActive("/video-corner")
                 ? "bg-green-100 text-green-800 font-bold"
@@ -142,7 +142,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
         </li>
         <li>
           <a
-            href="/kontak"
+            href="/#"
             className={`block px-3 py-2 rounded-lg transition ${
               isActive("/kontak")
                 ? "bg-green-100 text-green-800 font-bold"

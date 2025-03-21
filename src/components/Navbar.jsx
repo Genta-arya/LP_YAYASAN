@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
@@ -11,26 +11,26 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { FiMenu, FiX } from "react-icons/fi";
-import Image from "next/image";
 import Navbartop from "./Navbar-top";
 import SideBar from "./SideBar";
 import { TextTitle } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const isActive = (path) => pathname === path;
-
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   return (
     <>
-      {/* Top Info Bar */}
-      <Navbartop />
-
-      {/* Navbar */}
-      <nav className="bg-white px-3 xl:px-8   py-4 shadow-md w-full z-50">
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="bg-white px-3 xl:px-8 fixed py-4 shadow-md w-full z-50"
+      >
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2">
             <img
@@ -40,7 +40,9 @@ const Navbar = () => {
             />
             <div className="flex flex-col gap-1">
               <h1 className="text-green-800">Yayasan Islamiyyah</h1>
-              <p className="text-green-800 border-b-4 2xl:text-xl lg:text-base md:text-xl text-sm ">Al Jihad Ketapang</p>
+              <p className="text-green-800 border-b-4 2xl:text-xl lg:text-base md:text-xl text-sm ">
+                Al Jihad Center
+              </p>
             </div>
           </div>
 
@@ -48,6 +50,7 @@ const Navbar = () => {
           <div className="hidden lg:flex">
             <NavigationMenu>
               <NavigationMenuList className="flex space-x-6">
+                {/* Semua item */}
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
@@ -60,6 +63,8 @@ const Navbar = () => {
                     Beranda
                   </NavigationMenuLink>
                 </NavigationMenuItem>
+
+                {/* Dropdown Profil */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
                     className={`bg-white font-semibold text-black  ${TextTitle}`}
@@ -72,7 +77,7 @@ const Navbar = () => {
                     <ul className="flex flex-col space-y-2 w-64 font-bold">
                       <li>
                         <NavigationMenuLink
-                          href="/tentang-kami"
+                          href="/#"
                           className={`block px-4 py-2 rounded ${
                             isActive("/tentang-kami")
                               ? "bg-gray-200"
@@ -84,7 +89,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink
-                          href="/sejarah"
+                          href="/#"
                           className={`block px-4 py-2 rounded ${
                             isActive("/sejarah")
                               ? "bg-gray-200"
@@ -96,7 +101,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink
-                          href="/arsip"
+                          href="/#"
                           className={`block px-4 py-2 rounded ${
                             isActive("/arsip")
                               ? "bg-gray-200"
@@ -108,7 +113,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink
-                          href="/visi-misi"
+                          href="/#"
                           className={`block px-4 py-2 rounded ${
                             isActive("/visi-misi")
                               ? "bg-gray-200"
@@ -121,9 +126,11 @@ const Navbar = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+                {/* Item lainnya */}
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/artikel"
+                    href="/#"
                     className={`${TextTitle} font-semibold ${
                       isActive("/artikel")
                         ? "text-green-800 border-b-4 border-green-600"
@@ -136,7 +143,7 @@ const Navbar = () => {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/video-corner"
+                    href="/#"
                     className={`${TextTitle} font-semibold ${
                       isActive("/video-corner")
                         ? "text-blue-600 underline"
@@ -146,9 +153,10 @@ const Navbar = () => {
                     Gallery
                   </NavigationMenuLink>
                 </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/kontak"
+                    href="/#"
                     className={`${TextTitle} font-semibold ${
                       isActive("/kontak")
                         ? "text-blue-600 underline"
@@ -164,10 +172,24 @@ const Navbar = () => {
 
           {/* Hamburger Icon */}
           <button
-            className="lg:hidden 2xl:hidden text-2xl"
             onClick={toggleSidebar}
+            className="lg:hidden 2xl:hidden relative w-8 h-8 flex flex-col justify-center items-center z-50"
           >
-            {sidebarOpen ? <FiX /> : <FiMenu />}
+            <span
+              className={`absolute h-1 w-8 bg-green-800 rounded transition-transform duration-300 ${
+                sidebarOpen ? "rotate-45" : "-translate-y-2"
+              }`}
+            ></span>
+            <span
+              className={`absolute h-1 w-8 bg-green-800 rounded transition-opacity duration-300 ${
+                sidebarOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`absolute h-1 w-8 bg-green-800 rounded transition-transform duration-300 ${
+                sidebarOpen ? "-rotate-45" : "translate-y-2"
+              }`}
+            ></span>
           </button>
 
           {/* Sidebar Mobile */}
@@ -185,7 +207,7 @@ const Navbar = () => {
             ></div>
           )}
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 };
