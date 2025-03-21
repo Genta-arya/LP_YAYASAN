@@ -4,6 +4,7 @@ import Container from "./(Landing-Page)/(components)/Container";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 import Slider from "@/components/Slider";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 // Import font
 const inter = Inter({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
           rel="stylesheet"
         />
+        <ScrollToTopButton />
 
         <Footer />
       </body>

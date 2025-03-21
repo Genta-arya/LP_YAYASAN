@@ -25,7 +25,7 @@ const Modal = () => {
             <img
               src="/popup.jpg"
               alt="Pengumuman"
-              className="max-w-[70vw] max-h-[70vh] rounded-lg"
+              className="md:max-w-[90vw] max-w-[90vw] 2xl:max-w-[80vw] lg:max-w-[90vw]  max-h-[70vh] rounded-lg"
             />
             <button
               onClick={() => setShow(false)}

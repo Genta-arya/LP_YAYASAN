@@ -1,6 +1,7 @@
+"use client";
+
 import Slider from "@/components/Slider";
-import React from "react";
-import Container from "./(Landing-Page)/(components)/Container";
+import React, { useEffect } from "react";
 import ProgramUnggulan from "./(Landing-Page)/(Beranda)/Program";
 import TentangKami from "./(Landing-Page)/(Beranda)/TentangKami";
 import Pendaftaran from "./(Landing-Page)/(Beranda)/Pendaftaran";
@@ -11,6 +12,9 @@ import JumlahPengajar from "./(Landing-Page)/(Beranda)/JumlahPengajar";
 import LokasiMap from "./(Landing-Page)/(Beranda)/Maps";
 
 const page = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       {" "}
