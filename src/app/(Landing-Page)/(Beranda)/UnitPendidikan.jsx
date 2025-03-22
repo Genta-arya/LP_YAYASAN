@@ -144,7 +144,7 @@ const UnitPendidikan = () => {
                 ))}
               </CarouselContent>
 
-              <button
+              {/* <button
                 onClick={() => api?.scrollPrev()}
                 className="absolute text-green-800 -left-5 top-1/2 -translate-y-1/2 z-10 px-3 py-1"
               >
@@ -155,7 +155,7 @@ const UnitPendidikan = () => {
                 className="absolute text-green-800 -right-5 top-1/2 -translate-y-1/2 z-10 px-3 py-1"
               >
                 <ArrowRightCircle size={30} />
-              </button>
+              </button> */}
             </Carousel>
 
             <div className="flex justify-center mt-4 space-x-2">
