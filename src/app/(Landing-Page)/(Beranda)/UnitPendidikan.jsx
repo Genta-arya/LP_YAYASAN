@@ -12,6 +12,7 @@ import {
 import Pembatas from "@/components/Pembatas";
 import Image from "next/image";
 import { ArrowLeftCircle, ArrowRight, ArrowRightCircle } from "lucide-react";
+import ScrollFadeIn from "@/components/ScrollAnimated";
 
 const units = [
   {
@@ -72,6 +73,8 @@ const UnitPendidikan = () => {
 
   return (
     <section className="py-16 bg-gray-100">
+      <ScrollFadeIn direction="right" amount={0.3} >
+
       <div className=" mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4 text-green-800">
           Unit Pendidikan
@@ -172,6 +175,7 @@ const UnitPendidikan = () => {
           </div>
         </div>
       </div>
+      </ScrollFadeIn>
     </section>
   );
 };
