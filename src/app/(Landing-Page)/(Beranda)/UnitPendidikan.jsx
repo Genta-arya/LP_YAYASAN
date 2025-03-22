@@ -72,7 +72,7 @@ const UnitPendidikan = () => {
 
   return (
     <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 text-center">
+      <div className=" mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4 text-green-800">
           Unit Pendidikan
         </h2>
@@ -112,14 +112,14 @@ const UnitPendidikan = () => {
 
         {/* MOBILE CAROUSEL */}
         <div className="lg:hidden block mt-8 overflow-x-visible relative">
-          <div className="relative -mx-4 px-4">
+          <div className="relative  -mx-4 px-4">
             <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
               <CarouselContent className="-ml-4">
                 {units.map((unit, index) => (
                   <CarouselItem key={index} className="pl-4 basis-4/5">
                     <div className="p-1 h-full flex">
                       <Card className="flex flex-col items-center p-6 shadow-md flex-1">
-                        <div className="w-20 h-20 flex items-center justify-center mb-4">
+                        <div className="w-40 flex items-center justify-center mb-4">
                           <Image
                             src={unit.image}
                             alt={unit.title}
