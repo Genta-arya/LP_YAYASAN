@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Slider from "@/components/Slider";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
+
 // Import font
 const inter = Inter({
   variable: "--font-inter",
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         <main className="flex-1">{children}</main>
+       
         <ScrollToTopButton />
         <Footer />
       </body>
