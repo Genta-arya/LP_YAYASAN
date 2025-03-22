@@ -40,8 +40,8 @@ const Navbar = () => {
             />
             <div className="flex flex-col gap-1">
               <h1 className="text-green-800">Yayasan Islamiyyah</h1>
-              <p className="text-green-800 border-b-4 2xl:text-xl lg:text-base md:text-xl text-sm ">
-                Al Jihad Center
+              <p className="text-green-800 2xl:text-xl lg:text-base md:text-xl text-sm ">
+                AL-JIHAD Center
               </p>
             </div>
           </div>

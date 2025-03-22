@@ -18,7 +18,7 @@ const TentangKami = () => {
           </div>
           <div className="md:w-1/2">
             <p className="text-gray-700 mb-4 leading-relaxed">
-              <strong className="mr-2 text-green-800 font-extrabold">Yayasan Islamiyyah Al Jihad</strong>
+              <strong className="mr-2 text-green-800 font-extrabold">Yayasan Islamiyyah AL-JIHAD</strong>
               adalah lembaga pendidikan yang berkomitmen membentuk generasi
               unggul, berprestasi, dan berakhlak mulia. Dengan fasilitas lengkap
               dan pengajar profesional, kami siap mengantarkan siswa menuju masa
