@@ -43,11 +43,11 @@ const ProgramUnggulan = () => {
         </h2>
         <Pembatas />
 
-        <div className=" container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3   px-4">
+        <div className=" container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3   px-4 pb-4">
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="text-center hover:shadow-lg transition"
+              className="text-center hover:shadow-lg hover:shadow-green-800 hover:scale-95 transition-all duration-300 "
             >
               <CardHeader className="flex flex-col items-center">
                 {program.icon}
