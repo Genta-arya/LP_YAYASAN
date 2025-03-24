@@ -10,6 +10,7 @@ import Modal from "@/components/Modal";
 import ScrollFadeIn from "@/components/ScrollAnimated";
 import JumlahPengajar from "./(Landing-Page)/(Beranda)/JumlahPengajar";
 import LokasiMap from "./(Landing-Page)/(Beranda)/Maps";
+import ShinyText from "./TextAnimations/ShinyText/ShinyText";
 
 const page = () => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const page = () => {
     <div>
       {" "}
       <Slider />
+     
       <ProgramUnggulan />
       <TentangKami />
       <UnitPendidikan />

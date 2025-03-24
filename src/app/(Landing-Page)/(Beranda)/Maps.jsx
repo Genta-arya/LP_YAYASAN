@@ -11,7 +11,7 @@ const LokasiMap = () => {
         </h2>
         <Pembatas />
         <p className="mb-8 text-gray-700">
-          Yayasan Islamiyyah Al Jihad Ketapang di peta berikut.
+          Yayasan Islamiyah Al-Jihad Ketapang di peta berikut.
         </p>
         <div className="w-full h-[450px]">
           <iframe

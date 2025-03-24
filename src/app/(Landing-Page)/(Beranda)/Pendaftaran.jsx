@@ -1,4 +1,5 @@
 "use client";
+import ShinyText from "@/app/TextAnimations/ShinyText/ShinyText";
 import React from "react";
 
 const Pendaftaran = () => {
@@ -19,9 +20,11 @@ const Pendaftaran = () => {
           Kami mengundang putra terbaik Negeri untuk bergabung bersama Yayasan
           Islamiyyah Al Jihad Ketapang.
         </p>
-        <button className="bg-yellow-400 text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">
-          Daftar Sekarang
-        </button>
+
+        <button className="button-shine bg-yellow-400 cursor-pointer hover:opacity-80 text-black w-40 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">
+  <span>Daftar Sekarang</span>
+</button>
+
       </div>
     </div>
   );

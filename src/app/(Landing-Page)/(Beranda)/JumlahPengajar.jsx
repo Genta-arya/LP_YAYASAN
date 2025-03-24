@@ -4,11 +4,13 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ScrollFadeIn from "@/components/ScrollAnimated";
+import { GraduationCap, Users, Award } from "lucide-react";
+import SpotlightCard from "@/app/Components/SpotlightCard/SpotlightCard";
 
 const stats = [
-  { label: "Pengajar", value: 35 },
-  { label: "Siswa", value: 450 },
-  { label: "Prestasi", value: 120 },
+  { label: "Pengajar", value: 35, icon: GraduationCap },
+  { label: "Siswa", value: 450, icon: Users },
+  { label: "Prestasi", value: 120, icon: Award },
 ];
 
 const JumlahPengajar = () => {
@@ -25,27 +27,33 @@ const JumlahPengajar = () => {
             Mengukir Prestasi Bersama Kami
           </h2>
           <p className="mb-12 text-base md:text-lg max-w-2xl mx-auto">
-            Yayasan Islamiyyah Al Jihad Ketapang terus berkembang dengan
-            dukungan tenaga pengajar profesional, siswa berprestasi, dan
-            pencapaian luar biasa.
+            Yayasan Islamiyah Al-Jihad Ketapang terus berkembang dengan dukungan
+            tenaga pengajar profesional, siswa berprestasi, dan pencapaian luar
+            biasa.
           </p>
 
           <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <Card
-                key={index}
-                className="bg-white border border-green-200 shadow-md hover:shadow-lg transition"
-              >
-                <CardHeader>
-                  <CardTitle className="text-center text-5xl font-bold text-green-800">
-                    {inView ? <CountUp end={stat.value} duration={2} /> : 0}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-lg font-semibold">{stat.label}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <SpotlightCard>
+                  <Card
+                    key={index}
+                    className="bg-white border border-green-200 shadow-md hover:shadow-lg transition"
+                  >
+                    <CardHeader className="flex flex-col items-center gap-4">
+                      <Icon className="w-12 h-12 text-green-700" />
+                      <CardTitle className="text-center text-5xl font-bold text-green-800">
+                        {inView ? <CountUp end={stat.value} duration={2} /> : 0}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <p className="text-lg font-semibold">{stat.label}</p>
+                    </CardContent>
+                  </Card>
+                </SpotlightCard>
+              );
+            })}
           </div>
         </div>
       </ScrollFadeIn>

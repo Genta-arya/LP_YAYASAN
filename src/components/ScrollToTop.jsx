@@ -42,7 +42,7 @@ const ScrollToTopButton = () => {
     >
       <div
         onClick={scrollToTop}
-        className="relative w-14 h-14 bg-green-700 rounded-full cursor-pointer flex items-center justify-center shadow-lg"
+        className="relative md:w-14 md:h-14 w-12 h-12 bg-green-700 rounded-full cursor-pointer flex items-center justify-center shadow-lg"
       >
         <ArrowUp className="text-white w-6 h-6" />
         <svg className="absolute top-0 left-0 w-full h-full">

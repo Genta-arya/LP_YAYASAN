@@ -13,40 +13,41 @@ import Pembatas from "@/components/Pembatas";
 import Image from "next/image";
 import { ArrowLeftCircle, ArrowRight, ArrowRightCircle } from "lucide-react";
 import ScrollFadeIn from "@/components/ScrollAnimated";
+import SpotlightCard from "@/app/Components/SpotlightCard/SpotlightCard";
 
 const units = [
   {
-    title: "PAUD AL-JIHAD",
+    title: "Paud Al-Jihad",
     description:
       "Membentuk karakter anak sejak dini dengan pendidikan Islami yang kreatif, penuh kasih, dan menyenangkan.",
     image: "/paud.jpg",
   },
   {
-    title: "Pondok Pesantren AL-JIHAD",
+    title: "Pondok Pesantren Al-Jihad",
     description:
       "Menghafal dan memahami Al-Qur'an dengan metode interaktif, mencetak santri berakhlak mulia & berwawasan luas.",
     image: "/pondok.jpg",
   },
   {
-    title: "Taman Pendidikan Al-Qur'an AL-JIHAD",
+    title: "Taman Pendidikan Al-Qur'an Al-Jihad",
     description:
       "Tempat terbaik untuk belajar membaca, menulis, dan mencintai Al-Qur'an dengan pendekatan yang ramah anak.",
     image: "/tqp.jpg",
   },
   {
-    title: "Madrasah Diniyah Takmiliyah AL-JIHAD",
+    title: "Madrasah Diniyah Takmiliyah Al-Jihad",
     description:
       "Mendalami ilmu agama dan memperkuat pemahaman keislaman melalui pembelajaran terstruktur & menyenangkan.",
     image: "/mdt.jpg",
   },
   {
-    title: "SMP Islamiyyah AL-JIHAD",
+    title: "SMP Al-Jihad",
     description:
       "Mengasah potensi akademik & spiritual siswa, membentuk generasi berprestasi yang berlandaskan nilai-nilai Islami.",
     image: "/smp.jpg",
   },
   {
-    title: "SMA Islamiyyah AL-JIHAD",
+    title: "SMA Al-Jihad",
     description:
       "Mempersiapkan generasi Qurani yang unggul, siap melanjutkan ke jenjang perguruan tinggi atau terjun ke dunia kerja dengan percaya diri.",
     image: "/LOGO-SMA.jpg",
@@ -74,7 +75,7 @@ const UnitPendidikan = () => {
   return (
     <section className="py-16 bg-gray-100">
       <ScrollFadeIn direction="right" amount={0.3}>
-        <div className=" mx-auto px-4 text-center">
+        <div className=" lg:container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 text-green-800">
             Unit Pendidikan
           </h2>
@@ -88,9 +89,9 @@ const UnitPendidikan = () => {
           <div className="md:hidden lg:block hidden">
             <div className="grid gap-4 pb-8 md:grid-cols-2 lg:grid-cols-3">
               {units.map((unit, index) => (
-                <Card
+                <SpotlightCard
                   key={index}
-                  className="flex flex-col hover:shadow-green-800 hover:scale-95 transition-all duration-300 items-center p-6 shadow-md hover:shadow-lg "
+                  className="flex flex-col cursor-default hover:scale-95 transition-all duration-300 items-center p-6 shadow-md hover:shadow-lg "
                 >
                   <div className="w-20 h-20 flex items-center justify-center mb-4">
                     <Image
@@ -109,7 +110,29 @@ const UnitPendidikan = () => {
                       <p className="text-gray-600 mb-4">{unit.description}</p>
                     </div>
                   </CardContent>
-                </Card>
+                </SpotlightCard>
+                // <Card
+                //   key={index}
+                //   className="flex flex-col hover:shadow-green-800 hover:scale-95 transition-all duration-300 items-center p-6 shadow-md hover:shadow-lg "
+                // >
+                //   <div className="w-20 h-20 flex items-center justify-center mb-4">
+                //     <Image
+                //       src={unit.image}
+                //       alt={unit.title}
+                //       width={100}
+                //       height={100}
+                //       className="object-contain"
+                //     />
+                //   </div>
+                //   <CardContent className="text-center flex-1 flex flex-col justify-between">
+                //     <div>
+                //       <h3 className="text-xl font-semibold mb-2">
+                //         {unit.title}
+                //       </h3>
+                //       <p className="text-gray-600 mb-4">{unit.description}</p>
+                //     </div>
+                //   </CardContent>
+                // </Card>
               ))}
             </div>
           </div>
@@ -122,11 +145,15 @@ const UnitPendidikan = () => {
                 className="w-full"
                 opts={{ loop: true }}
               >
+            
+
                 <CarouselContent className="-ml-4">
                   {units.map((unit, index) => (
-                    <CarouselItem key={index} className="pl-4 basis-4/5 pb-8">
-                      <div className="p-1 h-full flex">
-                        <Card className="flex hover:shadow-lg hover:shadow-green-800 hover:scale-95 transition-all duration-300 flex-col items-center p-6 shadow-md flex-1">
+                    <CarouselItem key={index} className="pl-4 md:basis-4/5 basis-5/6 pb-8">
+                      {/* <SpotlightCard> */}
+
+                      <SpotlightCard className="p-1 h-full flex  hover:scale-95  transition-all duration-300">
+                        <div className="flex   flex-col items-center p-6 flex-1">
                           <div className="w-40 flex items-center justify-center mb-4">
                             <Image
                               src={unit.image}
@@ -141,16 +168,18 @@ const UnitPendidikan = () => {
                               <h3 className="text-lg font-semibold mb-2">
                                 {unit.title}
                               </h3>
-                              <p className="text-gray-600 text-sm ">
+                              <p className="text-gray-600 text-sm text-center">
                                 {unit.description}
                               </p>
                             </div>
                           </CardContent>
-                        </Card>
-                      </div>
+                        </div>
+                      </SpotlightCard>
+                      {/* </SpotlightCard> */}
                     </CarouselItem>
                   ))}
                 </CarouselContent>
+             
 
                 {/* <button
                 onClick={() => api?.scrollPrev()}
