@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const slides = [
   {
     id: 1,
-    title: "Yayasan Islamiyyah Al Jihad Ketapang",
+    title: "Yayasan Islamiyah Al-Jihad Ketapang",
     description: "Membangun Generasi Qurani, Berprestasi, dan Berakhlak Mulia.",
     image:
       "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
@@ -22,7 +22,7 @@ const slides = [
     id: 3,
     title: "Bersama Raih Masa Depan Gemilang",
     description:
-      "Bergabunglah bersama kami di Yayasan Islamiyyah Al Jihad Ketapang. Bersama, kita wujudkan impian Anda.",
+      "Bergabunglah bersama kami di Yayasan Islamiyah Al-Jihad Ketapang. Bersama, kita wujudkan impian Anda.",
     image: "/logo.jpg",
   },
 ];

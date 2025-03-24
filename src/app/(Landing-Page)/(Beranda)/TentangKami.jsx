@@ -19,6 +19,22 @@ const TentangKami = () => {
       id: 3,
       img: "/LOGO-SMA.jpg",
     },
+    {
+      id: 4,
+      img: "/tqp.jpg",
+    },
+    {
+      id: 5,
+      img: "/pondok.jpg",
+    },
+    {
+      id: 6,
+      img: "/paud.jpg",
+    },
+    {
+      id: 7,
+      img: "/mdt.jpg",
+    },
   ];
   return (
     <Container>
