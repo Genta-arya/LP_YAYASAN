@@ -9,7 +9,7 @@ const TentangKami = () => {
   const image = [
     {
       id: 1,
-      img: "/logo.jpg",
+      img: "/mdt.jpg",
     },
     {
       id: 2,
@@ -31,9 +31,10 @@ const TentangKami = () => {
       id: 6,
       img: "/paud.jpg",
     },
+   
     {
       id: 7,
-      img: "/mdt.jpg",
+      img: "/logo.jpg",
     },
   ];
   return (
