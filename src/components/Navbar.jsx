@@ -39,7 +39,7 @@ const Navbar = () => {
               className="w-20 md:w-20 rounded-full"
             />
             <div className="flex flex-col gap-1">
-              <h1 className="text-green-800">Yayasan Islamiyah Al-Jihad</h1>
+              <h1 className="text-green-800">Yayasan Islamiyah</h1>
               <p className="text-green-800 2xl:text-xl lg:text-base md:text-xl text-sm ">
                 Al-Jihad Islamic Center
               </p>
