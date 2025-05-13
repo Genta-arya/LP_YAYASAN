@@ -72,12 +72,12 @@ const Slider = () => {
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={handleDragEnd}
         >
-         <img
-  src={slides[current].image}
-  alt="slide"
-  className="w-full h-full object-cover"
-  style={{ objectPosition: "center 60px" }}
-/>
+          <img
+            src={slides[current].image}
+            alt="slide"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 60px" }}
+          />
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center px-4">
@@ -109,13 +109,13 @@ const Slider = () => {
       </AnimatePresence>
 
       {/* Dots */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full transition ${
-              current === index ? "bg-white" : "bg-gray-400"
+            className={`rounded-full items-center transition ${
+              current === index ? "bg-green-600 border-white border w-14 h-2 " : "bg-white w-12 h-0.5 "
             }`}
           ></button>
         ))}

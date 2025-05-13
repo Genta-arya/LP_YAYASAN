@@ -111,28 +111,7 @@ const UnitPendidikan = () => {
                     </div>
                   </CardContent>
                 </SpotlightCard>
-                // <Card
-                //   key={index}
-                //   className="flex flex-col hover:shadow-green-800 hover:scale-95 transition-all duration-300 items-center p-6 shadow-md hover:shadow-lg "
-                // >
-                //   <div className="w-20 h-20 flex items-center justify-center mb-4">
-                //     <Image
-                //       src={unit.image}
-                //       alt={unit.title}
-                //       width={100}
-                //       height={100}
-                //       className="object-contain"
-                //     />
-                //   </div>
-                //   <CardContent className="text-center flex-1 flex flex-col justify-between">
-                //     <div>
-                //       <h3 className="text-xl font-semibold mb-2">
-                //         {unit.title}
-                //       </h3>
-                //       <p className="text-gray-600 mb-4">{unit.description}</p>
-                //     </div>
-                //   </CardContent>
-                // </Card>
+               
               ))}
             </div>
           </div>
@@ -181,26 +160,14 @@ const UnitPendidikan = () => {
                 </CarouselContent>
              
 
-                {/* <button
-                onClick={() => api?.scrollPrev()}
-                className="absolute text-green-800 -left-5 top-1/2 -translate-y-1/2 z-10 px-3 py-1"
-              >
-                <ArrowLeftCircle size={30} />
-              </button>
-              <button
-                onClick={() => api?.scrollNext()}
-                className="absolute text-green-800 -right-5 top-1/2 -translate-y-1/2 z-10 px-3 py-1"
-              >
-                <ArrowRightCircle size={30} />
-              </button> */}
               </Carousel>
 
               <div className="flex justify-center mt-4 space-x-2">
                 {units.map((_, idx) => (
                   <button
                     key={idx}
-                    className={`w-2 h-2 rounded-full ${
-                      idx === currentIndex ? "bg-green-800" : "bg-gray-400"
+                    className={`rounded-full ${
+                      idx === currentIndex ? "bg-green-800 w-11  h-2 " : "bg-gray-400 w-2 h-2 "
                     }`}
                     onClick={() => api?.scrollTo(idx)}
                   />

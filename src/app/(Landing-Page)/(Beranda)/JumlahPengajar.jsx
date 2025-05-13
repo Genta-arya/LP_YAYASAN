@@ -38,7 +38,7 @@ const JumlahPengajar = () => {
               return (
                 <SpotlightCard>
                   <Card
-                    key={index}
+                    key={index + 1}
                     className="bg-white border border-green-200 shadow-md hover:shadow-lg transition"
                   >
                     <CardHeader className="flex flex-col items-center gap-4">

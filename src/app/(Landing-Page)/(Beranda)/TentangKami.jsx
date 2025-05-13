@@ -31,7 +31,7 @@ const TentangKami = () => {
       id: 6,
       img: "/paud.jpg",
     },
-   
+
     {
       id: 7,
       img: "/logo.jpg",
@@ -89,9 +89,12 @@ const TentangKami = () => {
               </div>
             </div>
             <div className="md:w-1/2 ">
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              <div className="text-gray-700 mb-4 leading-relaxed">
                 <strong className="md:text-xl text-base text-green-800 font-extrabold">
-                  <BlurText text="Yayasan Islamiyyah Al Jihad Ketapang" delay={0} />
+                  <BlurText
+                    text="Yayasan Islamiyyah Al Jihad Ketapang"
+                    delay={0}
+                  />
                 </strong>
                 <BlurText
                   delay={40}
@@ -101,14 +104,12 @@ const TentangKami = () => {
                 menuju masa depan cerah berlandaskan nilai-nilai Islami.
                 Bergabunglah bersama kami, dan jadilah bagian dari perubahan
                 menuju generasi emas!"
-                
                 />
-              </p>
-              
-              <p className="text-gray-700 leading-relaxed">
-                <BlurText text="" delay={40}  />
-             
-              </p>
+              </div>
+
+              <div className="text-gray-700 leading-relaxed">
+                <BlurText text="" delay={40} />
+              </div>
             </div>
           </div>
         </ScrollFadeIn>
