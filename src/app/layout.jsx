@@ -70,8 +70,10 @@ export default function RootLayout({ children }) {
         }}
       >
         <Navbar />
+        <div className="hidden md:block lg:block">
+          <CursorParticles />
+        </div>
 
-        <CursorParticles />
         <main className="flex-1 z-10 "> {children}</main>
         <ScrollToTopButton />
         <Footer />
