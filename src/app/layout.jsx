@@ -1,11 +1,12 @@
 import { Inter, Merriweather } from "next/font/google";
 import "./globals.css";
-import Container from "./(Landing-Page)/(components)/Container";
+
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
-import Slider from "@/components/Slider";
-import ScrollToTopButton from "@/components/ScrollToTop";
 
+import ScrollToTopButton from "@/components/ScrollToTop";
+import CursorParticles from "./Components/Ribbonss";
+import { Toaster } from "sonner";
 
 // Import font
 const inter = Inter({
@@ -63,16 +64,24 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${merriweather.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} ${merriweather.variable} relative antialiased flex flex-col min-h-screen`}
         style={{
           fontFamily: "var(--font-inter), sans-serif",
         }}
       >
         <Navbar />
-        <main className="flex-1">{children}</main>
-       
+
+        <CursorParticles />
+        <main className="flex-1 z-10 "> {children}</main>
         <ScrollToTopButton />
         <Footer />
+        <Toaster
+          richColors
+          position="bottom-center"
+          duration={3000}
+          closeButton
+          swipeDirections={["up", "down", "left", "right"]}
+        />
       </body>
     </html>
   );

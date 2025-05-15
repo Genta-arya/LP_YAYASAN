@@ -10,8 +10,6 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
-import { FiMenu, FiX } from "react-icons/fi";
-import Navbartop from "./Navbar-top";
 import SideBar from "./SideBar";
 import { TextTitle } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -130,12 +128,14 @@ const Navbar = () => {
                 {/* Item lainnya */}
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/#"
-                    className={`${TextTitle} font-semibold ${
-                      isActive("/artikel") ? "bg-gray-200" : "hover:bg-gray-100"
+                    href="/informasi"
+                     className={`${TextTitle} font-semibold ${
+                      isActive("/informasi")
+                        ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
+                        : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
-                    Berita
+                    Informasi
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 

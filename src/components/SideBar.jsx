@@ -115,14 +115,14 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
         </li>
         <li>
           <a
-            href="/artikel"
+            href="/informasi"
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/artikel")
+              isActive("/informasi")
                 ? "bg-green-100 text-green-800 font-bold"
                 : "hover:bg-gray-100"
             }`}
           >
-           Berita
+           Informasi
           </a>
         </li>
 
