@@ -22,7 +22,7 @@ const Lainya = ({ bacaJuga }) => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-52 h-24 sm:w-40 sm:h-28 md:w-48 md:h-32 lg:w-52 lg:h-36 rounded overflow-hidden">
+                  <div className="flex-shrink-0 w-20 h-20 sm:w-40 sm:h-28 md:w-48 md:h-32 lg:w-52 lg:h-36 rounded overflow-hidden">
                     <img
                       src={item.thumbnail}
                       alt={item.title}
