@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const slides = [
   {
@@ -100,9 +101,9 @@ const Slider = () => {
             </motion.p>
 
             {current === slides.length - 1 && (
-              <button className="font-semibold rounded-lg  bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80 ">
+              <Link href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru" className="font-semibold rounded-lg  bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80 ">
                 Daftar Sekarang
-              </button>
+              </Link>
             )}
           </div>
         </motion.div>

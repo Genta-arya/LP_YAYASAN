@@ -1,5 +1,6 @@
 "use client";
 import ShinyText from "@/app/TextAnimations/ShinyText/ShinyText";
+import Link from "next/link";
 import React from "react";
 
 const Pendaftaran = () => {
@@ -22,9 +23,10 @@ const Pendaftaran = () => {
         </p>
 
         <button className="button-shine bg-yellow-400 cursor-pointer hover:opacity-80 text-black w-40 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">
-  <span>Daftar Sekarang</span>
-</button>
-
+          <Link href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru">
+            Daftar Sekarang
+          </Link>
+        </button>
       </div>
     </div>
   );
