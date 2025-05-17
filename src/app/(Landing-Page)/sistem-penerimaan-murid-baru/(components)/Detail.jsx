@@ -1,0 +1,86 @@
+"use client";
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+import LokasiMap from "../../(Beranda)/Maps";
+import Download from "yet-another-react-lightbox/plugins/download";
+const Detail = ({ data }) => {
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  const images =
+    data.images
+      ?.filter((img) => img.url)
+      .map((img) => ({
+        src: img.url,
+        width: img.width || 1200,
+        height: img.height || 800,
+      })) || [];
+
+  const handleImageClick = (i) => {
+    setIndex(i);
+    setOpen(true);
+  };
+
+  return (
+    <div className="text-green-900 mt-28 mx-auto bg-gray-100">
+      {data.header && (
+        <div className="rounded-xl overflow-hidden mb-8">
+          <img
+            src={data.header}
+            alt="Header SPMB"
+            className="w-full h-auto object-cover transition-all duration-300"
+          />
+        </div>
+      )}
+
+      <div className="bg-gray-100 rounded-2xl p-6 max-w-screen-lg mx-auto">
+        <p className="lg:text-3xl md:text-3xl text-green-800 font-bold leading-relaxed mb-6 text-center">
+          Informasi Pendaftaran
+        </p>
+
+        {images.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {images.map((img, i) => {
+              const isLast = i === images.length - 1;
+              const isOdd = images.length % 2 !== 0;
+
+              return (
+                <div
+                  key={i}
+                  className={`group rounded-xl overflow-hidden shadow-md cursor-pointer ${
+                    isOdd && isLast ? "sm:col-span-2" : ""
+                  }`}
+                  onClick={() => handleImageClick(i)}
+                >
+                  <img
+                    src={img.src}
+                    alt={`Image ${i + 1}`}
+                    className="w-full object-cover group-hover:opacity-90 transition-all duration-300"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={images}
+        index={index}
+        plugins={[Zoom, Download]}
+        animation={{ duration: 300 }}
+        zoom={{
+          maxZoomPixelRatio: 2,
+          scrollToZoom: true,
+        }}
+      />
+      <LokasiMap />
+    </div>
+  );
+};
+
+export default Detail;

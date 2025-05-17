@@ -139,6 +139,19 @@ const Navbar = () => {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
+                 <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/sistem-penerimaan-murid-baru"
+                     className={`${TextTitle} font-semibold ${
+                      isActive("/sistem-penerimaan-murid-baru")
+                        ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
+                        : "hover:opacity-75 hover:text-green-800 text-black"
+                    }`}
+                  >
+                    SPMB
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/#"

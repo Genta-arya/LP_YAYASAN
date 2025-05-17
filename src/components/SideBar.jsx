@@ -127,6 +127,18 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive }) => {
         </li>
 
         {/* Profil Toggle */}
+          <li>
+          <a
+            href="/sistem-penerimaan-murid-baru"
+            className={`block px-3 py-2 rounded-lg transition ${
+              isActive("/sistem-penerimaan-murid-baru")
+                ? "bg-green-100 text-green-800 font-bold"
+                : "hover:bg-gray-100"
+            }`}
+          >
+            SPMB
+          </a>
+        </li>
 
         <li>
           <a
