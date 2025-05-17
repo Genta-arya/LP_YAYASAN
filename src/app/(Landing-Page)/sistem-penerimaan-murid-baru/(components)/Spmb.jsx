@@ -3,6 +3,7 @@
 import { GetSpmb } from "@/Services/Spmb.service";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import LokasiMap from "../../(Beranda)/Maps";
 
 const SkeletonCard = () => (
   <div className="border p-4 rounded-xl bg-white shadow-md animate-pulse">
@@ -80,6 +81,8 @@ const Spmb = () => {
               })}
         </div>
       )}
+
+      <LokasiMap />
     </div>
   );
 };
