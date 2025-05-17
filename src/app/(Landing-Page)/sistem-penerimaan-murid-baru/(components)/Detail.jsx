@@ -70,7 +70,7 @@ const Detail = ({ data }) => {
       </div>
       {data.konten && (
         <div
-          className="prose lg:prose-lg max-w-none text-left mb-8 mt-8 md:px-8 font-bold text-gray-500"
+          className="prose lg:prose-lg max-w-none text-left md:ml-0 lg:px-0 px-4 ml-4 mb-8 mt-8 md:px-8 font-bold text-gray-500"
           dangerouslySetInnerHTML={{ __html: data.konten }}
         />
       )}
