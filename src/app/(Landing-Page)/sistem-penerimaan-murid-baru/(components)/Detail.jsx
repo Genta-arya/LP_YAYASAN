@@ -8,6 +8,7 @@ import Download from "yet-another-react-lightbox/plugins/download";
 const Detail = ({ data }) => {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  console.log(data);
 
   const images =
     data.images
@@ -35,13 +36,13 @@ const Detail = ({ data }) => {
         </div>
       )}
 
-      <div className="bg-gray-100 rounded-2xl p-6 max-w-screen-lg mx-auto">
+      <div className="bg-gray-100 rounded-2xl p-2 lg:p-6 md:p-6 max-w-screen-lg mx-auto">
         <p className="lg:text-3xl md:text-3xl text-green-800 font-bold leading-relaxed mb-6 text-center">
           Informasi Pendaftaran
         </p>
 
         {images.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
             {images.map((img, i) => {
               const isLast = i === images.length - 1;
               const isOdd = images.length % 2 !== 0;
@@ -50,7 +51,9 @@ const Detail = ({ data }) => {
                 <div
                   key={i}
                   className={`group rounded-xl overflow-hidden shadow-md cursor-pointer ${
-                    isOdd && isLast ? "sm:col-span-2" : ""
+                    isOdd && isLast
+                      ? "sm:col-span-2 lg:col-span-1 col-span-2"
+                      : ""
                   }`}
                   onClick={() => handleImageClick(i)}
                 >
@@ -65,6 +68,12 @@ const Detail = ({ data }) => {
           </div>
         )}
       </div>
+      {data.konten && (
+        <div
+          className="prose lg:prose-lg max-w-none text-left mb-8 mt-8 md:px-8 font-bold text-gray-500"
+          dangerouslySetInnerHTML={{ __html: data.konten }}
+        />
+      )}
 
       <Lightbox
         open={open}

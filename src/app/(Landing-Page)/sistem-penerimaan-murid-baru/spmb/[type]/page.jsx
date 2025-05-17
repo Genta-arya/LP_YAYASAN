@@ -8,14 +8,18 @@ export async function generateMetadata({ params }) {
   try {
     const detail = await GetDetailSpmb(type);
     const data = detail.data;
+const stripHtml = (html) => {
+  if (!html) return "";
+  return html.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+};
 
     return {
       title: `SPMB - ${data.judul}`,
-      description: data.judul || `Informasi SPMB untuk ${type}`,
+      description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
       metadataBase: new URL("https://yayasan-aljihad.com"), // ganti sesuai domain asli
       openGraph: {
         title: `SPMB - ${data.judul}`,
-        description: data.judul || `Informasi SPMB untuk ${type}`,
+        description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
         url: `https://yayasan-aljihad.com/spmb/${type}`,
         type: "article",
         images: [
