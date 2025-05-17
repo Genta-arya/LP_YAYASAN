@@ -6,12 +6,12 @@ const LokasiMap = () => {
   return (
     <section className="pt-16 bg-gray-100">
       <div className=" text-center">
-        <h2 className="text-xl md:text-4xl font-bold mb-6 text-green-800">
+        <h2 className="text-xl md:text-4xl font-bold  text-green-800">
           Lokasi
         </h2>
         <Pembatas />
-        <p className="mb-8 text-gray-700">
-          Yayasan Islamiyah Al-Jihad Ketapang di peta berikut.
+        <p className="mb-8 -mt-8 text-gray-700">
+          Yayasan Islamiyah Al-Jihad Ketapang.
         </p>
         <div className="w-full h-[450px]">
           <iframe
