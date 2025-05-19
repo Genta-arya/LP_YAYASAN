@@ -35,7 +35,8 @@ export const metadata = {
 const Page = () => {
   return (
     <div>
-      <Slider />
+      {/* <Slider /> */}
+
       <Spmb />
       {/* Boleh aktifin kalau mau nampilin map juga */}
       {/* <LokasiMap /> */}

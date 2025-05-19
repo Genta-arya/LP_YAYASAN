@@ -46,7 +46,7 @@ const Slider = ({ data }) => {
     description:
       shuffledTexts[index % shuffledTexts.length]?.description ||
       `Deskripsi untuk slide ${index + 1}`,
-    image: item.url,
+    image: item.url || "",
   }));
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const Slider = ({ data }) => {
           onDragEnd={handleDragEnd}
         >
           <img
-            src={slides[current].image}
+            src={slides[current].image || "https://via.placeholder.com/150"}
             alt="slide"
             className="w-full h-full object-cover"
             style={{ objectPosition: "center 60px" }}

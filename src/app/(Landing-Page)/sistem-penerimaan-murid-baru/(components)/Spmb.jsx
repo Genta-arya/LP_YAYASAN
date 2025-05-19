@@ -12,7 +12,7 @@ const SkeletonCard = () => (
   </div>
 );
 
-const Spmb = () => {
+const  Spmb = () => {
   const [spmbData, setSpmbData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false); // ✅ state error
@@ -69,7 +69,7 @@ const Spmb = () => {
                     }`}
                   >
                     <img
-                      src={item.url_icon}
+                      src={item.url_icon || "https://via.placeholder.com/150"}
                       alt={item.judul}
                       className="lg:h-32 lg:w-32 w-32 h-32 object-contain mx-auto mb-2 transition-transform duration-300"
                     />
