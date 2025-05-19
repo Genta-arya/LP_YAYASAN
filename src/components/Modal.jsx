@@ -31,7 +31,7 @@ const Modal = () => {
 
             {/* Tombol Daftar */}
             <Link
-              href="http://localhost:3000/sistem-penerimaan-murid-baru"
+              href="/sistem-penerimaan-murid-baru"
               className="mt-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-3 rounded-lg transition"
             >
               Daftar Sekarang
