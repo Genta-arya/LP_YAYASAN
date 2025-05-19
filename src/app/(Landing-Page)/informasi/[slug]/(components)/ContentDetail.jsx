@@ -147,7 +147,7 @@ const ContentDetailClient = ({ data }) => {
   }
 
   return (
-    <div className="mx-auto py-4 flex flex-col lg:flex-row gap-8 cursor-default px-4 lg:px-4">
+    <div className="mx-auto py-4 px-8  flex flex-col lg:flex-row gap-8 cursor-default  lg:px-4">
       <div className="lg:w-[100%]">
         <h1 className="text-2xl lg:text-4xl text-green-800 md:text-3xl font-bold mb-4">
           {data.title}

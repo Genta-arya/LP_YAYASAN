@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import useGlobalStore from "@/lib/Zustand";
+
 const staticTexts = [
   {
     title: "Yayasan Islamiyyah Al Jihad Ketapang",
@@ -21,30 +22,38 @@ const staticTexts = [
   },
 ];
 
-const textVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-};
-
-const Slider = ({ datas }) => {
-  const [current, setCurrent] = useState(0);
+const Slider = () => {
   const { data, fetchData } = useGlobalStore();
   const [shuffledTexts, setShuffledTexts] = useState([]);
-  
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   useEffect(() => {
     fetchData();
   }, []);
-  
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect(); // init langsung
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
   useEffect(() => {
     const shuffled = [...staticTexts];
-    const lastText = shuffled.splice(2, 1)[0]; // Ambil staticTexts[2]
+    const lastText = shuffled.splice(2, 1)[0];
     const randomTexts = shuffled.sort(() => Math.random() - 0.5);
-    setShuffledTexts([...randomTexts, lastText]); // Pastikan teks ketiga jadi teks terakhir
+    setShuffledTexts([...randomTexts, lastText]);
   }, []);
 
   const images = data?.sliders?.[0]?.images || [];
-  // Randomize teks saat pertama kali komponen load
-
 
   const slides = images.map((item, index) => ({
     id: item.id,
@@ -57,95 +66,65 @@ const Slider = ({ datas }) => {
     image: item.url || "",
   }));
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 15000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const handleDragEnd = (event, info) => {
-    if (info.offset.x > 100) {
-      prevSlide();
-    } else if (info.offset.x < -100) {
-      nextSlide();
-    }
-  };
-  if (!data) return null; // atau loading indicator kalau mau
+  if (!data) {
+    return (
+      <div className="relative w-full overflow-hidden 2xl:h-[840px] xl:h-[800px] md:h-[800px] h-[500px] bg-gray-200 animate-pulse">
+        <div className="w-full h-full flex items-center justify-center">
+        
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="relative w-full 2xl:h-[840px] xl:h-[800px] h-[620px] overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={slides[current].id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute w-full h-full"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={handleDragEnd}
-        >
-          <img
-            src={slides[current].image}
-            alt="slide"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: "center 60px" }}
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center px-4">
-            <motion.h2
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              className="mb-8 max-w-3xl text-white 2xl:text-5xl md:text-4xl font-extrabold"
+    <div className="relative w-full overflow-hidden  2xl:h-[840px] xl:h-[800px]   lg:mt-0 md:mt-0 mt-40">
+      <div className="embla" ref={emblaRef}>
+        <div className="embla__container flex">
+          {slides.map((slide, index) => (
+            <div
+              className="embla__slide flex-[0_0_100%] relative"
+              key={slide.id}
             >
-              {slides[current].title}
-            </motion.h2>
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
 
-            <motion.p
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              className="2xl:max-w-3xl lgl:max-w-2xl md:max-w-xl mb-6 text-white 2xl:text-2xl md:text-xl"
-            >
-              {slides[current].description}
-            </motion.p>
+              <div className="absolute inset-0 top-0 md:top-32 lg:-top-80 bg-black/60 flex flex-col justify-center items-center text-center px-4">
+                {/* <h2 className="mb-8 max-w-3xl text-white 2xl:text-5xl md:text-4xl font-extrabold">
+                  {slide.title}
+                </h2>
+                <p className="2xl:max-w-3xl lg:max-w-2xl md:max-w-xl mb-6 text-white 2xl:text-2xl md:text-xl">
+                  {slide.description}
+                </p> */}
+{/* 
+                {index === slides.length - 1 && (
+                  <Link
+                    href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru"
+                    className="font-semibold rounded-lg bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80"
+                  >
+                    Daftar Sekarang
+                  </Link>
+                )} */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-            {current === slides.length - 1 && (
-              <Link
-                href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru"
-                className="font-semibold rounded-lg  bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80 "
-              >
-                Daftar Sekarang
-              </Link>
-            )}
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Dots */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 z-10">
+      {/* Custom Dots */}
+      <div className="absolute md:bottom-5 bottom-3 lg:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrent(index)}
-            className={`rounded-full items-center transition ${
-              current === index
-                ? "bg-green-600 border-white border w-14 h-2 "
-                : "bg-white w-12 h-0.5 "
-            }`}
-          ></button>
+            onClick={() => emblaApi && emblaApi.scrollTo(index)}
+            className={`rounded-full transition-all duration-300 ${
+              selectedIndex === index
+                ? "bg-yellow-500  opacity-100  w-12 h-3 "
+                : "bg-white w-3 h-3 "
+            } hover:opacity-80`}
+          />
         ))}
       </div>
     </div>

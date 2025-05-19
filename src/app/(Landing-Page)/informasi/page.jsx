@@ -7,7 +7,7 @@ export const metadata = {
 }
 const page = () => {
   return (
-    <div className="mt-48 container mx-auto px-3 xl:px-8">
+    <div className="mt-48  px-3 xl:px-8">
       {" "}
       <Tabs />
     </div>

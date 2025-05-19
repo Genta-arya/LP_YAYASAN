@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import LokasiMap from "../../(Beranda)/Maps";
 
 const SkeletonCard = () => (
-  <div className="border p-4  rounded-xl bg-white shadow-md animate-pulse mt-20">
+  <div className="border p-4  rounded-xl bg-white shadow-md animate-pulse ">
     <div className="lg:h-16 lg:w-16 w-32 h-32 bg-gray-300 rounded mx-auto mb-2"></div>
     <div className="h-4 bg-gray-300 rounded w-2/3 mx-auto"></div>
   </div>
@@ -35,7 +35,7 @@ const Spmb = () => {
 
   return (
     <>
-      <div className="mt-8 text-center lg:px-4 px-1 pb-4">
+      <div className="mt-8 text-center lg:px-4 px-1 pb-12">
         {!loading && (
           <>
             <div className="flex items-center justify-center text-green-800">

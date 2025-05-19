@@ -34,20 +34,12 @@ export const metadata = {
 };
 
 const Page = () => {
-
-  
-
   return (
     <>
-    
-    
       <Slider />
-    <div className="  ">
-      
-      <Spmb />
-      {/* Boleh aktifin kalau mau nampilin map juga */}
-      {/* <LokasiMap /> */}
-    </div>
+      <div className="  ">
+        <Spmb />
+      </div>
     </>
   );
 };
