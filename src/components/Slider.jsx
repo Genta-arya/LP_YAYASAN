@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import useGlobalStore from "@/lib/Zustand";
 const staticTexts = [
   {
     title: "Yayasan Islamiyyah Al Jihad Ketapang",
@@ -25,18 +26,25 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },
 };
 
-const Slider = ({ data }) => {
+const Slider = ({ datas }) => {
   const [current, setCurrent] = useState(0);
-  const images = data?.sliders?.[0]?.images || [];
-  // Randomize teks saat pertama kali komponen load
+  const { data, fetchData } = useGlobalStore();
   const [shuffledTexts, setShuffledTexts] = useState([]);
-
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
   useEffect(() => {
     const shuffled = [...staticTexts];
     const lastText = shuffled.splice(2, 1)[0]; // Ambil staticTexts[2]
     const randomTexts = shuffled.sort(() => Math.random() - 0.5);
     setShuffledTexts([...randomTexts, lastText]); // Pastikan teks ketiga jadi teks terakhir
   }, []);
+
+  const images = data?.sliders?.[0]?.images || [];
+  // Randomize teks saat pertama kali komponen load
+
 
   const slides = images.map((item, index) => ({
     id: item.id,
@@ -71,6 +79,7 @@ const Slider = ({ data }) => {
       nextSlide();
     }
   };
+  if (!data) return null; // atau loading indicator kalau mau
 
   return (
     <div className="relative w-full 2xl:h-[840px] xl:h-[800px] h-[620px] overflow-hidden">
@@ -87,7 +96,7 @@ const Slider = ({ data }) => {
           onDragEnd={handleDragEnd}
         >
           <img
-            src={slides[current].image || "https://via.placeholder.com/150"}
+            src={slides[current].image}
             alt="slide"
             className="w-full h-full object-cover"
             style={{ objectPosition: "center 60px" }}

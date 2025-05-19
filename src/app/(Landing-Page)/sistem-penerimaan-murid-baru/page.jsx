@@ -2,6 +2,7 @@ import Slider from "@/components/Slider";
 import React from "react";
 import Spmb from "./(components)/Spmb";
 import LokasiMap from "../(Beranda)/Maps";
+import useGlobalStore from "@/lib/Zustand";
 
 // Metadata untuk SEO & OG
 export const metadata = {
@@ -33,14 +34,21 @@ export const metadata = {
 };
 
 const Page = () => {
-  return (
-    <div>
-      {/* <Slider /> */}
 
+  
+
+  return (
+    <>
+    
+    
+      <Slider />
+    <div className="  ">
+      
       <Spmb />
       {/* Boleh aktifin kalau mau nampilin map juga */}
       {/* <LokasiMap /> */}
     </div>
+    </>
   );
 };
 

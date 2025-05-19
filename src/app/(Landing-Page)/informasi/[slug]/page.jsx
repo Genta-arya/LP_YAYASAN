@@ -75,7 +75,7 @@ const Page = async ({ params }) => {
   // ✅ Render halaman kalau semua aman
   return (
     <div className="relative">
-      <div className="mt-32 container mx-auto px-3 xl:px-8">
+      <div className="mt-48 container mx-auto px-3 xl:px-8">
         <ContentDetail data={data} />
       </div>
     </div>

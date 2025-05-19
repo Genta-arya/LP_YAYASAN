@@ -14,7 +14,7 @@ const Modal = () => {
   return (
     <AnimatePresence>
       {show && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 backdrop-blur-xs">
+        <div className="fixed inset-0 top-20 bg-black/50 flex justify-center items-center z-50 backdrop-blur-xs">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

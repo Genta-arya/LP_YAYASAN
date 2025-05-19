@@ -15,18 +15,8 @@ import { getDataGlobal } from "@/Services/Global.Services";
 import useGlobalStore from "@/lib/Zustand";
 
 const page = () => {
-  const { data, setData, loading, setLoading } = useGlobalStore();
-  const fetchData = async () => {
-    try {
-      const response = await getDataGlobal();
-      setData(response.data.data);
-    } catch (error) {
-      console.error("Gagal fetch data SPMB:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  const { data, fetchData , loading } = useGlobalStore();
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -34,9 +24,10 @@ const page = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  if (loading) {
-    return null;
-  }
+  // if (loading) {
+  //   return null;
+  // }
+  if (!data ) return null;
   return (
     <div>
       {" "}

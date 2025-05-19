@@ -13,6 +13,8 @@ import {
 import SideBar from "./SideBar";
 import { TextTitle } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Info from "./info";
+
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -27,7 +29,7 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-white px-3 xl:px-8 fixed py-4 shadow-md w-full z-50"
+        className="bg-white top-[41px] px-3 xl:px-8 fixed py-4 shadow-md w-full z-50"
       >
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2">
@@ -208,6 +210,8 @@ const Navbar = () => {
             toggleSidebar={toggleSidebar}
           />
 
+          
+
           {/* Overlay */}
           {sidebarOpen && (
             <div
@@ -217,6 +221,10 @@ const Navbar = () => {
           )}
         </div>
       </motion.nav>
+   
+        <Info />
+    
+      
     </>
   );
 };
