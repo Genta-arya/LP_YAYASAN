@@ -39,11 +39,11 @@ const Spmb = () => {
         {!loading && (
           <>
             <div className="flex items-center justify-center text-green-800">
-              <div className="flex-grow border-t-4 border-green-800"></div>
+              <div className="flex-grow border-t-4 border-gray-400"></div>
               <span className="lg:px-4 px-1 font-extrabold text-base lg:text-3xl text-green-800">
                 SISTEM PENERIMAAN MURID BARU
               </span>
-              <div className="flex-grow border-t-4 border-green-800"></div>
+              <div className="flex-grow border-t-4 border-gray-400"></div>
             </div>
 
             <p className="text-green-800 lg:text-lg text-sm font-semibold">
@@ -58,7 +58,7 @@ const Spmb = () => {
             Gagal memuat informasi SPMB. Silakan coba lagi nanti.
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:gap-4 gap-2 mt-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:gap-4 gap-2 mt-6 px-2">
             {loading
               ? Array.from({ length: 6 }).map((_, i) => (
                   <SkeletonCard key={i} />
@@ -80,7 +80,7 @@ const Spmb = () => {
                         alt={item.judul}
                         className="lg:h-32 lg:w-32 w-32 h-32 object-contain mx-auto mb-2 transition-transform duration-300"
                       />
-                      <h2 className="font-bold lg:text-base text-sm text-green-800 text-center">
+                      <h2 className="font-bold lg:text-base text-sm text-gray-600 text-center">
                         {item.judul}
                       </h2>
                     </Link>
