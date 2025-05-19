@@ -75,7 +75,7 @@ const UnitPendidikan = () => {
   return (
     <section className="py-16 bg-gray-100">
       <ScrollFadeIn direction="right" amount={0.3}>
-        <div className=" lg:container mx-auto px-4 text-center">
+        <div className="  px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 text-green-800">
             Unit Pendidikan
           </h2>

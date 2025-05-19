@@ -15,7 +15,7 @@ const Modal = () => {
   return (
     <AnimatePresence>
       {show && (
-        <div className="fixed inset-0 top-32 bg-black/50 flex justify-center items-center z-100 backdrop-blur-xs">
+        <div className="fixed inset-0 top-32 lg:top-40 bg-black/50 flex justify-center items-center z-100 backdrop-blur-xs">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -26,13 +26,13 @@ const Modal = () => {
             <img
               src="/popup.jpg"
               alt="Pengumuman"
-              className="md:max-w-[90vw] max-w-[90vw] 2xl:max-w-[80vw] lg:max-w-[90vw] max-h-[70vh] rounded-lg"
+              className="md:max-w-[60vw] max-w-[90vw] 2xl:max-w-[80vw] lg:max-w-[90vw] max-h-[60vh] rounded-lg"
             />
 
             {/* Tombol Daftar */}
             <Link
               href="/sistem-penerimaan-murid-baru"
-              className="mt-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-3 rounded-lg transition"
+              className="mt-4 bg-yellow-400 hover:bg-yellow-300 text-sm text-black font-semibold px-6 py-3 rounded-lg transition"
             >
               Daftar Sekarang
             </Link>
