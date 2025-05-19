@@ -2,21 +2,35 @@ import { GetDetailSpmb } from "@/Services/Spmb.service";
 import React from "react";
 import Detail from "../../(components)/Detail";
 
+import { notFound } from "next/navigation";
+
 export async function generateMetadata({ params }) {
   const { type } = params;
 
   try {
     const detail = await GetDetailSpmb(type);
-    const data = detail.data;
-const stripHtml = (html) => {
-  if (!html) return "";
-  return html.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
-};
+    const data = detail?.data;
+
+    if (!data || !data.judul) {
+      // ❗ Return metadata default aja
+      return {
+        title: "SPMB - Data tidak ditemukan",
+        description: `Halaman SPMB untuk ${type} tidak ditemukan.`,
+      };
+    }
+
+    const stripHtml = (html) => {
+      if (!html) return "";
+      return html
+        .replace(/<[^>]*>?/gm, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    };
 
     return {
       title: `SPMB - ${data.judul}`,
       description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
-      metadataBase: new URL("https://yayasan-aljihad.com"), // ganti sesuai domain asli
+      metadataBase: new URL("https://yayasan-aljihad.com"),
       openGraph: {
         title: `SPMB - ${data.judul}`,
         description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
@@ -24,7 +38,7 @@ const stripHtml = (html) => {
         type: "article",
         images: [
           {
-            url: data.header || "https://yayasan-aljihad.com/default-og.jpg", // fallback OG image
+            url: data?.header || "https://yayasan-aljihad.com/default-og.jpg",
             width: 1200,
             height: 630,
             alt: `SPMB - ${data.judul}`,
@@ -33,9 +47,10 @@ const stripHtml = (html) => {
       },
     };
   } catch (error) {
+    console.error("Gagal mengambil metadata:", error);
     return {
-      title: "Oops, terjadi kesalahan",
-      description: "Terjadi kesalahan saat mengambil data berita.",
+      title: "SPMB - Tidak ditemukan",
+      description: "Terjadi kesalahan saat mengambil metadata.",
     };
   }
 }
