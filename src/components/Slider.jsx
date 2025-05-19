@@ -2,29 +2,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-
-const slides = [
+const staticTexts = [
   {
-    id: 1,
-    title: "Yayasan Islamiyah Al-Jihad Ketapang",
-    description: "Membangun Generasi Qurani, Berprestasi, dan Berakhlak Mulia.",
-    image:
-      "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    title: "Yayasan Islamiyyah Al Jihad Ketapang",
+    description:
+      "Lembaga pendidikan yang berkomitmen membentuk generasi unggul, berprestasi, dan berakhlak mulia.",
   },
   {
-    id: 2,
-    title: "Fasilitas Lengkap & Modern",
+    title: "Fasilitas Lengkap & Pengajar Profesional",
     description:
-      "Mendukung proses belajar terbaik dengan sarana lengkap & lingkungan nyaman.",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "Dengan lingkungan belajar yang nyaman dan guru-guru berpengalaman, kami siap mengantar siswa menuju masa depan cerah.",
   },
   {
-    id: 3,
-    title: "Bersama Raih Masa Depan Gemilang",
+    title: "Bersama Mewujudkan Generasi Emas",
     description:
-      "Bergabunglah bersama kami di Yayasan Islamiyah Al-Jihad Ketapang. Bersama, kita wujudkan impian Anda.",
-    image: "/logo.jpg",
+      "Bergabunglah bersama kami dan jadilah bagian dari perubahan menuju generasi Islam yang cerdas dan berdaya saing.",
   },
 ];
 
@@ -33,8 +25,29 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },
 };
 
-const Slider = () => {
+const Slider = ({ data }) => {
   const [current, setCurrent] = useState(0);
+  const images = data?.sliders?.[0]?.images || [];
+  // Randomize teks saat pertama kali komponen load
+  const [shuffledTexts, setShuffledTexts] = useState([]);
+
+  useEffect(() => {
+    const shuffled = [...staticTexts];
+    const lastText = shuffled.splice(2, 1)[0]; // Ambil staticTexts[2]
+    const randomTexts = shuffled.sort(() => Math.random() - 0.5);
+    setShuffledTexts([...randomTexts, lastText]); // Pastikan teks ketiga jadi teks terakhir
+  }, []);
+
+  const slides = images.map((item, index) => ({
+    id: item.id,
+    title:
+      shuffledTexts[index % shuffledTexts.length]?.title ||
+      `Slide ${index + 1}`,
+    description:
+      shuffledTexts[index % shuffledTexts.length]?.description ||
+      `Deskripsi untuk slide ${index + 1}`,
+    image: item.url,
+  }));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -101,7 +114,10 @@ const Slider = () => {
             </motion.p>
 
             {current === slides.length - 1 && (
-              <Link href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru" className="font-semibold rounded-lg  bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80 ">
+              <Link
+                href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru"
+                className="font-semibold rounded-lg  bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80 "
+              >
                 Daftar Sekarang
               </Link>
             )}
@@ -116,7 +132,9 @@ const Slider = () => {
             key={index}
             onClick={() => setCurrent(index)}
             className={`rounded-full items-center transition ${
-              current === index ? "bg-green-600 border-white border w-14 h-2 " : "bg-white w-12 h-0.5 "
+              current === index
+                ? "bg-green-600 border-white border w-14 h-2 "
+                : "bg-white w-12 h-0.5 "
             }`}
           ></button>
         ))}
