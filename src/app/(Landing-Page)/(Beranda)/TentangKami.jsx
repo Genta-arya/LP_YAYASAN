@@ -27,7 +27,7 @@ const TentangKami = () => {
     <Container>
       <div className="py-16 bg-white">
         <ScrollFadeIn direction="left" amount={0.3}>
-          <div className="flex flex-col md:flex-col items-start gap-10 md:gap-16 px-4 pb-24 w-full">
+          <div className="flex flex-col lg:flex-row md:flex-col items-start gap-10 md:gap-16 px-4 pb-24 w-full">
             <div className="flex justify-center w-full">
               <img
                 src={sambutan.url_Image}
