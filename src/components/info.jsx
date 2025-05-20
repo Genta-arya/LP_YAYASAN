@@ -28,7 +28,7 @@ const Info = () => {
   );
 
   return (
-    <div className="bg-green-700 fixed top-[0px] w-full z-50 shadow overflow-hidden py-5 border-b-4 border-yellow-500">
+    <div className="bg-green-700 fixed top-[-2px] w-full z-50 shadow overflow-hidden py-5 border-b-4 border-yellow-500">
       <motion.div
         className="absolute left-0 top-5.5 -translate-y-1/2 text-white text-sm font-semibold whitespace-nowrap"
         initial={{ x: '250%' }}
