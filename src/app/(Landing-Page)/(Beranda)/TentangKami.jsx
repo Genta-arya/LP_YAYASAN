@@ -38,7 +38,7 @@ const TentangKami = () => {
 
             <div className="flex-1 text-gray-700 leading-relaxed  prose max-w-none">
               <h2 className="text-green-800 font-extrabold text-xl lg:text-start md:text-start text-center">
-                Yayasan Islamiyah
+                Yayasan
               </h2>
               <h2 className="text-green-800 font-extrabold text-xl lg:text-start md:text-start text-center mb-4">
                 Al-Jihad Islamic Center Ketapang

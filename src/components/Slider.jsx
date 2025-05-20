@@ -39,10 +39,20 @@ const Slider = () => {
     };
 
     emblaApi.on("select", onSelect);
-    onSelect(); // init langsung
+    onSelect(); // inisialisasi pertama
+
+    // Auto-slide tiap 5 detik
+    const autoSlide = setInterval(() => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext();
+      } else {
+        emblaApi.scrollTo(0); // Balik ke awal kalau udah mentok
+      }
+    }, 15000);
 
     return () => {
       emblaApi.off("select", onSelect);
+      clearInterval(autoSlide);
     };
   }, [emblaApi]);
 
@@ -68,16 +78,14 @@ const Slider = () => {
 
   if (!data) {
     return (
-      <div className="relative w-full overflow-hidden 2xl:h-[840px] xl:h-[800px] md:h-[800px] h-[500px] bg-gray-200 animate-pulse">
-        <div className="w-full h-full flex items-center justify-center">
-        
-        </div>
+      <div className="relative w-full overflow-hidden 2xl:h-[840px] xl:h-[800px] md:h-[800px] h-[700px] bg-gray-200 animate-pulse">
+        <div className="w-full h-full flex items-center justify-center"></div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-full overflow-hidden  2xl:h-[840px] xl:h-[800px]   lg:mt-0 md:mt-0 mt-32">
+    <div className="relative w-full overflow-hidden  2xl:h-[880px] xl:h-[800px]    lg:mt-0 md:mt-0 mt-32">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container flex">
           {slides.map((slide, index) => (
@@ -91,35 +99,19 @@ const Slider = () => {
                 className="w-full h-full object-cover"
               />
 
-              <div className="absolute inset-0 top-0 md:top-32 lg:-top-80 bg-black/60 flex flex-col justify-center items-center text-center px-4">
-                {/* <h2 className="mb-8 max-w-3xl text-white 2xl:text-5xl md:text-4xl font-extrabold">
-                  {slide.title}
-                </h2>
-                <p className="2xl:max-w-3xl lg:max-w-2xl md:max-w-xl mb-6 text-white 2xl:text-2xl md:text-xl">
-                  {slide.description}
-                </p> */}
-{/* 
-                {index === slides.length - 1 && (
-                  <Link
-                    href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru"
-                    className="font-semibold rounded-lg bg-white text-black cursor-pointer transition px-8 py-3 hover:bg-white/80"
-                  >
-                    Daftar Sekarang
-                  </Link>
-                )} */}
-              </div>
+              <div className="absolute inset-0 top-0 md:top-32 lg:-top-80 bg-black/60 flex flex-col justify-center items-center text-center px-4"></div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Custom Dots */}
-      <div className="absolute md:bottom-5 bottom-3 lg:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute  md:bottom-5 bottom-3 lg:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => emblaApi && emblaApi.scrollTo(index)}
-            className={`rounded-full transition-all duration-300 ${
+            className={`rounded-full cursor-pointer transition-all duration-300 ${
               selectedIndex === index
                 ? "bg-yellow-500  opacity-100  w-12 h-3 "
                 : "bg-white w-3 h-3 "
