@@ -14,7 +14,7 @@ import SideBar from "./SideBar";
 import { TextTitle } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Info from "./info";
-
+import Link from "next/link";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -29,7 +29,7 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-white top-[41px] px-3 xl:px-8 fixed py-4 shadow-md w-full z-50"
+        className="bg-white top-[41px] px-3 xl:px-8 fixed  shadow-md w-full z-50"
       >
         <div className="flex justify-between items-center px-2">
           <div className="text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2">
@@ -53,14 +53,13 @@ const Navbar = () => {
                 {/* Semua item */}
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/"
                     className={`${TextTitle} font-semibold ${
                       isActive("/")
                         ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
                         : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
-                    Beranda
+                    <Link href="/">Beranda</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -77,7 +76,6 @@ const Navbar = () => {
                     <ul className="flex flex-col space-y-2 w-64 font-bold">
                       <li>
                         <NavigationMenuLink
-                          href="/#"
                           className={`block px-4 py-2 rounded ${
                             isActive("/tentang-kami")
                               ? "bg-gray-200"
@@ -130,27 +128,25 @@ const Navbar = () => {
                 {/* Item lainnya */}
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/informasi"
-                     className={`${TextTitle} font-semibold ${
+                    className={`${TextTitle} font-semibold ${
                       isActive("/informasi")
                         ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
                         : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
-                    Informasi
+                    <Link href="/informasi">Informasi</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                 <NavigationMenuItem>
+                <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/sistem-penerimaan-murid-baru"
-                     className={`${TextTitle} font-semibold ${
+                    className={`${TextTitle} font-semibold ${
                       isActive("/sistem-penerimaan-murid-baru")
                         ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
                         : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
-                    SPMB
+                    <Link href="/sistem-penerimaan-murid-baru">SPMB</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -206,11 +202,10 @@ const Navbar = () => {
           {/* Sidebar Mobile */}
           <SideBar
             isActive={isActive}
+            setSidebarOpen={setSidebarOpen}
             sidebarOpen={sidebarOpen}
             toggleSidebar={toggleSidebar}
           />
-
-          
 
           {/* Overlay */}
           {sidebarOpen && (
@@ -221,10 +216,8 @@ const Navbar = () => {
           )}
         </div>
       </motion.nav>
-   
-        <Info />
-    
-      
+
+      <Info />
     </>
   );
 };

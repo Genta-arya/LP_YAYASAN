@@ -2,7 +2,6 @@
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ScrollFadeIn from "@/components/ScrollAnimated";
 import { GraduationCap, Users, Award } from "lucide-react";
 import SpotlightCard from "@/app/Components/SpotlightCard/SpotlightCard";
@@ -20,7 +19,7 @@ const JumlahPengajar = () => {
   });
 
   return (
-    <section className="bg-white border-t-4 border-dashed border-green-800 py-20 text-green-900">
+    <section className="bg-white border-t-4 border border-green-800 py-20 text-green-900">
       <ScrollFadeIn direction="bottom" amount={0.3}>
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold mb-8">
@@ -32,25 +31,18 @@ const JumlahPengajar = () => {
             biasa.
           </p>
 
-          <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8 cursor-default">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <SpotlightCard>
-                  <Card
-                    key={index + 1}
-                    className="bg-white border border-green-200 shadow-md hover:shadow-lg transition"
-                  >
-                    <CardHeader className="flex flex-col items-center gap-4">
-                      <Icon className="w-12 h-12 text-green-700" />
-                      <CardTitle className="text-center text-5xl font-bold text-green-800">
-                        {inView ? <CountUp end={stat.value} duration={2} /> : 0}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <p className="text-lg font-semibold">{stat.label}</p>
-                    </CardContent>
-                  </Card>
+                <SpotlightCard key={index}>
+                  <div className=" flex flex-col items-center">
+                    <Icon className="w-12 h-12 text-green-700 mb-4" />
+                    <div className="lg:text-5xl text-3xl font-bold text-yellow-600 mb-2">
+                      {inView ? <CountUp end={stat.value} duration={2} /> : 0}
+                    </div>
+                    <p className="text-lg font-semibold text-gray-600">{stat.label}</p>
+                  </div>
                 </SpotlightCard>
               );
             })}

@@ -77,7 +77,7 @@ const Slider = () => {
   }
 
   return (
-    <div className="relative w-full overflow-hidden  2xl:h-[840px] xl:h-[800px]   lg:mt-0 md:mt-0 mt-40">
+    <div className="relative w-full overflow-hidden  2xl:h-[840px] xl:h-[800px]   lg:mt-0 md:mt-0 mt-32">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container flex">
           {slides.map((slide, index) => (
