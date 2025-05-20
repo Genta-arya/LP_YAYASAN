@@ -34,14 +34,22 @@ const ProgramUnggulan = () => {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.2, // Delay antar kartu
+        delayChildren: 0.6, // Delay global semua kartu
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -50,14 +58,14 @@ const ProgramUnggulan = () => {
         className="lg:hidden md:hidden -mt-5"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.1 }}
         variants={containerVariants}
       >
         <motion.h2
-          className="lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-10 text-green-800"
-          initial={{ opacity: 0, y: -30 }}
+          className="lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-6 text-green-800"
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           Program Unggulan
         </motion.h2>
@@ -69,7 +77,15 @@ const ProgramUnggulan = () => {
           variants={containerVariants}
         >
           {programs.map((program, index) => (
-            <motion.div key={index} variants={cardVariants}>
+            <motion.div
+              key={index}
+       
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.5 }}
+              variants={cardVariants}
+            >
+              
               <SpotlightCard className="cursor-default">
                 <div className="flex flex-col items-center">
                   {program.icon}
@@ -83,6 +99,7 @@ const ProgramUnggulan = () => {
           ))}
         </motion.div>
       </motion.div>
+
       <div className="hidden md:block lg:block">
         <ScrollFadeIn direction="bottom" amount={0.1}>
           <h2 className="text-3xl font-bold text-center mb-10 text-green-800">
