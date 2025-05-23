@@ -36,7 +36,7 @@ export const metadata = {
     siteName: "Yayasan Islamiyyah Al Jihad Ketapang",
     images: [
       {
-        url: "/LOGO-SMP.jpg", // Pastikan file og-image.jpg ada di /public
+        url: "/LOGO-SMP.ico", // Pastikan file og-image.jpg ada di /public
         width: 1200,
         height: 630,
         alt: "Yayasan Islamiyyah Al Jihad Ketapang",
@@ -49,7 +49,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Yayasan Islamiyyah Al Jihad Ketapang",
     description: "Sekolah unggul berbasis akhlak & prestasi",
-    images: ["/LOGO-SMP.jpg"],
+    images: ["/LOGO-SMP.ico"],
   },
 };
 

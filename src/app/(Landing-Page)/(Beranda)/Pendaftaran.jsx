@@ -23,7 +23,7 @@ const Pendaftaran = () => {
         </p>
 
         <button className="button-shine bg-yellow-400 cursor-pointer hover:opacity-80 text-black w-40 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">
-          <Link href="https://al-jihad.center.mgentaarya.my.id/sistem-penerimaan-murid-baru">
+          <Link href="/sistem-penerimaan-murid-baru">
             Daftar Sekarang
           </Link>
         </button>
