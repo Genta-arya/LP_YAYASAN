@@ -39,10 +39,12 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+const Page = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <InformasiPage />
     </Suspense>
   );
 }
+
+export default Page
