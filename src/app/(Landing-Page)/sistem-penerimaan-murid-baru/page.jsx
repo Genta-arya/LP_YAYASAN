@@ -7,6 +7,20 @@ import Head from "next/head"; // ⬅️ Tambahkan ini!
 
 export const metadata = {
   title: "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad",
+   keywords: [
+    "Yayasan Al Jihad Ketapang",
+    "SMP Islam Ketapang",
+    "Yayasan ketapang",
+    "aljihad ketapang",
+    "aljihad",
+    "al jihad",
+    "Sekolah unggulan Kalimantan Barat",
+    "Pendidikan Islam Ketapang",
+    "Sekolah berbasis akhlak",
+    "Sekolah berprestasi Ketapang",
+    "Sekolah terbaik di Ketapang",
+    "Yayasan Islamiyyah Al Jihad"
+  ],
   description:
     "Daftar sekarang untuk bergabung bersama Al-Jihad Islamic Center. Informasi lengkap tentang sistem penerimaan murid baru (SPMB) tersedia di sini.",
   metadataBase: new URL("https://www.aljihadketapang.sch.id/"),

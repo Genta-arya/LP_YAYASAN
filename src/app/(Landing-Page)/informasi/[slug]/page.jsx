@@ -26,6 +26,20 @@ export async function generateMetadata({ params }) {
     return {
       title: `${data.title} - Yayasan Al-Jihad`,
       description: plainContent,
+      keywords: [
+        "Yayasan Al Jihad Ketapang",
+        "SMP Islam Ketapang",
+        "Yayasan ketapang",
+        "aljihad ketapang",
+        "aljihad",
+        "al jihad",
+        "Sekolah unggulan Kalimantan Barat",
+        "Pendidikan Islam Ketapang",
+        "Sekolah berbasis akhlak",
+        "Sekolah berprestasi Ketapang",
+        "Sekolah terbaik di Ketapang",
+        "Yayasan Islamiyyah Al Jihad",
+      ],
 
       openGraph: {
         title: data.title,

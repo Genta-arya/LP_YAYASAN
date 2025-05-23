@@ -30,6 +30,20 @@ export async function generateMetadata({ params }) {
     return {
       title: `SPMB - ${data.judul}`,
       description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
+       keywords: [
+    "Yayasan Al Jihad Ketapang",
+    "SMP Islam Ketapang",
+    "Yayasan ketapang",
+    "aljihad ketapang",
+    "aljihad",
+    "al jihad",
+    "Sekolah unggulan Kalimantan Barat",
+    "Pendidikan Islam Ketapang",
+    "Sekolah berbasis akhlak",
+    "Sekolah berprestasi Ketapang",
+    "Sekolah terbaik di Ketapang",
+    "Yayasan Islamiyyah Al Jihad"
+  ],
       metadataBase: new URL("https://www.aljihadketapang.sch.id/"),
       openGraph: {
         title: `SPMB - ${data.judul}`,
