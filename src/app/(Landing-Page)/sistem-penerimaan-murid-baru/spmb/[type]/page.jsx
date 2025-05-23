@@ -30,11 +30,11 @@ export async function generateMetadata({ params }) {
     return {
       title: `SPMB - ${data.judul}`,
       description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
-      metadataBase: new URL("https://yayasan-aljihad.com"),
+      metadataBase: new URL("https://www.aljihadketapang.sch.id/"),
       openGraph: {
         title: `SPMB - ${data.judul}`,
         description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
-        url: `https://yayasan-aljihad.com/spmb/${type}`,
+        url: `https://www.aljihadketapang.sch.id/spmb/${type}`,
         type: "article",
         images: [
           {

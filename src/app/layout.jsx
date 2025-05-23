@@ -32,7 +32,7 @@ export const metadata = {
   openGraph: {
     title: "Yayasan Islamiyyah Al Jihad Ketapang",
     description: "Sekolah unggul berbasis akhlak & prestasi",
-    url: "al-jihad.center.mgentaarya.my.id/",
+    url: "https://www.aljihadketapang.sch.id/",
     siteName: "Yayasan Islamiyyah Al Jihad Ketapang",
     images: [
       {
@@ -61,6 +61,36 @@ export default function RootLayout({ children }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
           rel="stylesheet"
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Beranda",
+                  item: "https://www.aljihadketapang.sch.id",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Sistem Penerimaan Murid Baru",
+                  item: "https://www.aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Informasi",
+                  item: "https://www.aljihadketapang.sch.id/informasi",
+                },
+              ],
+            }),
+          }}
         />
       </head>
       <body

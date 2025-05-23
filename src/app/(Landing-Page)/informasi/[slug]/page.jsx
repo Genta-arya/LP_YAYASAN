@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
     return {
       title: `${data.title} - Yayasan Al-Jihad`,
       description: plainContent,
+
       openGraph: {
         title: data.title,
         description: plainContent,
@@ -60,7 +61,7 @@ const Page = async ({ params }) => {
     console.error("Error fetching berita:", error);
 
     // 🛑 Kalau server mati (tidak ada response)
-    if (error.message=== "Request failed with status code 404") {
+    if (error.message === "Request failed with status code 404") {
       return <ErrorMessage style="mt-64" />;
     } else {
       console.log(error.message);
@@ -68,8 +69,6 @@ const Page = async ({ params }) => {
         return notFound();
       }
     }
-
-    
   }
 
   // ✅ Render halaman kalau semua aman
