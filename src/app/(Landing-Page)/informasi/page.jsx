@@ -12,16 +12,21 @@ const Page = () => {
   const allowedTabs = ["informasi", "berita", "opini"];
   const defaultTab = "informasi";
 
-  const [activeTab, setActiveTab] = useState(defaultTab);
+  const [activeTab, setActiveTab] = useState(null);
 
   useEffect(() => {
-    if (qParam) {
-      if (allowedTabs.includes(qParam)) {
-        setActiveTab(qParam);
-      } else {
-        router.replace("/404");
-      }
+    if (!qParam) return;
+
+    if (allowedTabs.includes(qParam)) {
+      setActiveTab(qParam);
     } else {
+      router.replace("/404");
+    }
+  }, [qParam]);
+
+  // Redirect to defaultTab only once (prevent loop)
+  useEffect(() => {
+    if (qParam === null) {
       router.replace(`?q=${defaultTab}`);
     }
   }, [qParam]);
@@ -30,6 +35,9 @@ const Page = () => {
     setActiveTab(tab);
     router.replace(`?q=${tab}`);
   };
+
+  // Prevent render until activeTab is set
+  if (!activeTab) return null;
 
   return (
     <div className="mt-36 px-3 xl:px-8">
