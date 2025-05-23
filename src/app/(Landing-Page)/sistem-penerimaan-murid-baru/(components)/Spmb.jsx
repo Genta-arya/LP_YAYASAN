@@ -34,7 +34,7 @@ const Spmb = () => {
   }, []);
   useEffect(() => {
     if (!loading && !error && cardRef.current) {
-      const yOffset = -300; // kamu bisa atur -50 atau -150 sesuai tampilanmu
+      const yOffset = -260; // kamu bisa atur -50 atau -150 sesuai tampilanmu
       const y =
         cardRef.current.getBoundingClientRect().top +
         window.pageYOffset +
