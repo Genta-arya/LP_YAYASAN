@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "Yayasan Al-Jihad Ketapang",
     images: [
       {
-        url: "https://www.aljihadketapang.sch.id/LOGO-SMP.jpg",
+        url: "https://www.aljihadketapang.sch.id/informasi.png",
         width: 1200,
         height: 630,
         alt: "Yayasan Al-Jihad Ketapang",
@@ -35,15 +35,15 @@ export const metadata = {
     title: "Yayasan Al-Jihad - Informasi",
     description:
       "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
-    images: ["https://www.aljihadketapang.sch.id/LOGO-SMP.jpg"],
+    images: ["https://www.aljihadketapang.sch.id/informasi.png"],
   },
 };
 
 const Page = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+   
       <InformasiPage />
-    </Suspense>
+  
   );
 }
 
