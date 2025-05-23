@@ -62,7 +62,7 @@ const page = () => {
   return (
     <div>
       {" "}
-      <Slider data={data} />
+      <Slider datas={data} />
       <ProgramUnggulan data={data} />
       <TentangKami data={data} />
       <UnitPendidikan data={data} />
