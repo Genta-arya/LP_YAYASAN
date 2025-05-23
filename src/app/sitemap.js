@@ -4,7 +4,9 @@ import { GetBerita } from "@/Services/Berita.services";
 export default async function sitemap() {
   const baseUrl = "https://www.aljihadketapang.sch.id";
 
-  // Spmb dynamic pages
+  // ----------------------
+  // Dynamic SPMB Pages
+  // ----------------------
   const spmbResult = await GetSpmb();
   const spmbUrls = spmbResult.data.map((item) => ({
     url: `${baseUrl}/spmb/${item.type}`,
@@ -13,8 +15,10 @@ export default async function sitemap() {
     priority: 1.0,
   }));
 
-  // Semua type berita yang tersedia
-  const beritaTypes = ["berita", "informasi", "opini"]; // kamu bisa tambah sesuai type yang ada
+  // ----------------------
+  // Dynamic Berita Pages
+  // ----------------------
+  const beritaTypes = ["berita", "informasi", "opini"];
   let beritaUrls = [];
 
   for (const type of beritaTypes) {
@@ -30,7 +34,9 @@ export default async function sitemap() {
     beritaUrls = [...beritaUrls, ...urls];
   }
 
-  // Static pages
+  // ----------------------
+  // Static Pages + Tab Query Variants
+  // ----------------------
   const staticUrls = [
     {
       url: baseUrl,
@@ -44,12 +50,13 @@ export default async function sitemap() {
       changefreq: "daily",
       priority: 1.0,
     },
-    {
-      url: `${baseUrl}/informasi`,
+    // Tambahkan query ?q=informasi, berita, opini
+    ...beritaTypes.map((tab) => ({
+      url: `${baseUrl}/informasi?q=${tab}`,
       lastModified: new Date().toISOString(),
       changefreq: "daily",
       priority: 1.0,
-    },
+    })),
   ];
 
   return [...staticUrls, ...spmbUrls, ...beritaUrls];

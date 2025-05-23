@@ -1,46 +1,41 @@
-import React from "react";
-import Head from "next/head"; // <- Penting!
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Tabs from "./(components)/Tabs";
 
-export const metadata = {
-  title: "Yayasan Al-Jihad - Informasi",
-};
+const Page = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const qParam = searchParams.get("q");
 
-const page = () => {
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Beranda",
-        "item": "https://www.aljihadketapang.sch.id"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Informasi",
-        "item": "https://www.aljihadketapang.sch.id/informasi"
+  const allowedTabs = ["informasi", "berita", "opini"];
+  const defaultTab = "informasi";
+
+  const [activeTab, setActiveTab] = useState(defaultTab);
+
+  useEffect(() => {
+    if (qParam) {
+      if (allowedTabs.includes(qParam)) {
+        setActiveTab(qParam);
+      } else {
+        router.replace("/404");
       }
-    ]
+    } else {
+      router.replace(`?q=${defaultTab}`);
+    }
+  }, [qParam]);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    router.replace(`?q=${tab}`);
   };
 
   return (
-    <>
-      <Head>
-        <title>Yayasan Al-Jihad - Informasi</title>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-        />
-      </Head>
-
-      <div className="mt-36 px-3 xl:px-8">
-        <Tabs />
-      </div>
-    </>
+    <div className="mt-36 px-3 xl:px-8">
+      <Tabs activeTab={activeTab} setActiveTab={handleTabChange} />
+    </div>
   );
 };
 
-export default page;
+export default Page;
