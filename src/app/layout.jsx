@@ -26,6 +26,20 @@ const merriweather = Merriweather({
 export const metadata = {
   title: "Yayasan AL-JIHAD | Ketapang Kalimantan Barat",
   description: "Sekolah unggul berbasis akhlak & prestasi",
+   keywords: [
+    "Yayasan Al Jihad Ketapang",
+    "SMP Islam Ketapang",
+    "Yayasan ketapang",
+    "aljihad ketapang",
+    "aljihad",
+    "al jihad",
+    "Sekolah unggulan Kalimantan Barat",
+    "Pendidikan Islam Ketapang",
+    "Sekolah berbasis akhlak",
+    "Sekolah berprestasi Ketapang",
+    "Sekolah terbaik di Ketapang",
+    "Yayasan Islamiyyah Al Jihad"
+  ],
   icons: {
     icon: "/LOGO-SMP.ico", // Letakkan favicon.ico di /public
   },
