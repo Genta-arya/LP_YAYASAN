@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import useGlobalStore from "@/lib/Zustand";
+import { usePathname } from "next/navigation";
 
 const staticTexts = [
   {
@@ -22,15 +23,20 @@ const staticTexts = [
   },
 ];
 
-const Slider = () => {
+const Slider = ({datas}) => {
+  const pathname = usePathname();
   const { data, fetchData } = useGlobalStore();
   const [shuffledTexts, setShuffledTexts] = useState([]);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
+ const isBeranda = pathname === "/";
+ useEffect(() => {
+    if (!isBeranda) {
+      fetchData();
+    }
+  }, [isBeranda]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const sliderData = isBeranda ? datas : data;
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -63,7 +69,7 @@ const Slider = () => {
     setShuffledTexts([...randomTexts, lastText]);
   }, []);
 
-  const images = data?.sliders?.[0]?.images || [];
+  const images = sliderData?.sliders?.[0]?.images || [];
 
   const slides = images.map((item, index) => ({
     id: item.id,
@@ -76,7 +82,7 @@ const Slider = () => {
     image: item.url || "",
   }));
 
-  if (!data) {
+  if (!sliderData) {
     return (
       <div className="relative w-full overflow-hidden 2xl:h-[840px] xl:h-[800px] md:h-[800px] h-[700px] bg-gray-200 animate-pulse">
         <div className="w-full h-full flex items-center justify-center"></div>
