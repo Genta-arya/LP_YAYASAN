@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Tabs from "../(components)/Tabs";
+import Tabs from "./(components)/Tabs";
+
 
 const InformasiPage = () => {
   const router = useRouter();
