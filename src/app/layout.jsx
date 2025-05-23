@@ -1,9 +1,9 @@
 import { Inter, Merriweather } from "next/font/google";
 import "./globals.css";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
-
+import { Analytics } from "@vercel/analytics/next"
 import ScrollToTopButton from "@/components/ScrollToTop";
 import CursorParticles from "./Components/Ribbonss";
 import { Toaster } from "sonner";
@@ -103,6 +103,9 @@ export default function RootLayout({ children }) {
         <div className="hidden md:block lg:block">
           <CursorParticles />
         </div>
+
+        <SpeedInsights />
+        <Analytics />
 
         <main className="flex-1 z-10 "> {children}</main>
         <ScrollToTopButton />
