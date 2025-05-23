@@ -1,49 +1,48 @@
-"use client";
+import React, { Suspense } from "react";
+import InformasiPage from "./InformasiPage";
 
-import React, { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Tabs from "./(components)/Tabs";
 
-const Page = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const qParam = searchParams.get("q");
-
-  const allowedTabs = ["informasi", "berita", "opini"];
-  const defaultTab = "informasi";
-
-  const [activeTab, setActiveTab] = useState(null);
-
-  useEffect(() => {
-    if (!qParam) return;
-
-    if (allowedTabs.includes(qParam)) {
-      setActiveTab(qParam);
-    } else {
-      router.replace("/404");
-    }
-  }, [qParam]);
-
-  // Redirect to defaultTab only once (prevent loop)
-  useEffect(() => {
-    if (qParam === null) {
-      router.replace(`?q=${defaultTab}`);
-    }
-  }, [qParam]);
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    router.replace(`?q=${tab}`);
-  };
-
-  // Prevent render until activeTab is set
-  if (!activeTab) return null;
-
-  return (
-    <div className="mt-36 px-3 xl:px-8">
-      <Tabs activeTab={activeTab} setActiveTab={handleTabChange} />
-    </div>
-  );
+export const metadata = {
+  title: "Yayasan Al-Jihad - Informasi",
+  description:
+    "Dapatkan informasi terbaru seputar kegiatan, pengumuman, dan berita dari Yayasan Al-Jihad Ketapang.",
+  keywords: [
+    "Yayasan Al-Jihad",
+    "Informasi Sekolah",
+    "Berita Al-Jihad",
+    "Ketapang",
+    "SMP Islam Ketapang",
+  ],
+  authors: [{ name: "Yayasan Al-Jihad Ketapang" }],
+  openGraph: {
+    title: "Yayasan Al-Jihad - Informasi",
+    description:
+      "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
+    url: "https://www.aljihadketapang.sch.id/informasi",
+    siteName: "Yayasan Al-Jihad Ketapang",
+    images: [
+      {
+        url: "https://www.aljihadketapang.sch.id/LOGO-SMP.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Yayasan Al-Jihad Ketapang",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yayasan Al-Jihad - Informasi",
+    description:
+      "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
+    images: ["https://www.aljihadketapang.sch.id/LOGO-SMP.jpg"],
+  },
 };
 
-export default Page;
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <InformasiPage />
+    </Suspense>
+  );
+}
