@@ -2,7 +2,7 @@
 
 import { GetSpmb } from "@/Services/Spmb.service";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import LokasiMap from "../../(Beranda)/Maps";
 
 const SkeletonCard = () => (
@@ -16,7 +16,7 @@ const Spmb = () => {
   const [spmbData, setSpmbData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false); // ✅ state error
-
+  const cardRef = useRef(null);
   const fetchData = async () => {
     try {
       const data = await GetSpmb();
@@ -32,10 +32,20 @@ const Spmb = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  useEffect(() => {
+    if (!loading && !error && cardRef.current) {
+      const yOffset = -250; // kamu bisa atur -50 atau -150 sesuai tampilanmu
+      const y =
+        cardRef.current.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }, [loading, error]);
 
   return (
     <>
-      <div className="mt-8 text-center lg:px-4 px-1 pb-12">
+      <div ref={cardRef} className="mt-8 text-center lg:px-4 px-1 pb-12">
         {!loading && (
           <>
             <div className="flex items-center justify-center text-green-800">
