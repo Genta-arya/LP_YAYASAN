@@ -41,9 +41,9 @@ export const metadata = {
 
 const Page = () => {
   return (
-   
+    <Suspense fallback={<div>Loading...</div>}>
       <InformasiPage />
-  
+    </Suspense>
   );
 }
 
