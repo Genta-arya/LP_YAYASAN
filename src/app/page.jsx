@@ -22,8 +22,10 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (data) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [data]);
 
   if (!data)
     return (
