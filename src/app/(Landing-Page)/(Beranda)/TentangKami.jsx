@@ -1,115 +1,53 @@
+"use client";
 import React from "react";
-import Image from "next/image";
+import DOMPurify from "dompurify";
 import Container from "@/components/Container";
 import ScrollFadeIn from "@/components/ScrollAnimated";
-import BlurText from "@/app/TextAnimations/BlurText/BlurText";
-import Stack from "@/app/Components/Stack/Stack";
+import useGlobalStore from "@/lib/Zustand";
 
 const TentangKami = () => {
-  const image = [
-    {
-      id: 1,
-      img: "/mdt.jpg",
-    },
-    {
-      id: 2,
-      img: "/LOGO-SMP.ico",
-    },
-    {
-      id: 3,
-      img: "/LOGO-SMA.jpg",
-    },
-    {
-      id: 4,
-      img: "/tqp.jpg",
-    },
-    {
-      id: 5,
-      img: "/pondok.jpg",
-    },
-    {
-      id: 6,
-      img: "/paud.jpg",
-    },
+  const { data } = useGlobalStore();
+  const sambutan = data?.sambutan;
 
-    {
-      id: 7,
-      img: "/logo.jpg",
-    },
-  ];
+  if (!sambutan) return null;
+
+  // Bersihkan HTML dan hilangkan watermark
+  const cleanHTML = DOMPurify.sanitize(sambutan.konten, {
+    FORBID_TAGS: ["script", "style"],
+    FORBID_ATTR: ["style"], // Opsional, kalau mau lebih bersih
+  });
+
+  // Optional: hapus watermark dari Froala manual
+  const cleanHTMLNoWatermark = cleanHTML.replace(
+    /<p[^>]*>Powered by.*?<\/p>/gi,
+    ""
+  );
+
   return (
     <Container>
       <div className="py-16 bg-white">
-        <ScrollFadeIn direction="left" amount={0.3}>
-          <div className="container justify-center mx-auto flex flex-col md:flex-row items-center gap-10 px-4 pb-24">
-            <div className="md:w-1/2 lg:w-1/3 ">
-              {/* <Image
-                src="/logo.jpg"
-                width={600}
-                height={400}
-                alt="Tentang Kami"
-                className="rounded-lg shadow-lg"
-              /> */}
-              <div className="lg:hidden hidden md:block">
-                <Stack
-                  randomRotation={true}
-                  cardDimensions={{ width: 300, height: 300 }}
-                  cardsData={image}
-                  sensitivity={180}
-                  sendToBackOnClick={false}
-                />
-              </div>
-              <div className="md:hidden lg:hidden 2xl:hidden">
-                <Stack
-                  randomRotation={true}
-                  cardDimensions={{ width: 300, height: 300 }}
-                  cardsData={image}
-                  sensitivity={180}
-                  sendToBackOnClick={false}
-                />
-              </div>
-
-              <div className="md:hidden hidden lg:hidden 2xl:block">
-                <Stack
-                  randomRotation={true}
-                  cardDimensions={{ width: 400, height: 400 }}
-                  cardsData={image}
-                  sensitivity={180}
-                  sendToBackOnClick={false}
-                />
-              </div>
-              <div className="md:hidden hidden lg:block 2xl:hidden">
-                <Stack
-                  randomRotation={true}
-                  cardDimensions={{ width: 350, height: 350 }}
-                  cardsData={image}
-                  sensitivity={180}
-                  sendToBackOnClick={false}
-                />
-              </div>
+        <ScrollFadeIn direction="left" amount={0.1}>
+          <div className="flex flex-col lg:flex-row md:flex-col items-start gap-10 md:gap-16 px-4 pb-24 w-full">
+            <div className="flex justify-center w-full lg:w-[300px]">
+              <img
+                src={sambutan.url_Image}
+                alt=""
+                className="lg:w-80 md:w-80 w-96 rounded-full shadow-xl border-4 border-green-700 p-1"
+              />
             </div>
-            <div className="md:w-1/2 ">
-              <div className="text-gray-700 mb-4 leading-relaxed">
-                <strong className="md:text-xl text-base text-green-800 font-extrabold">
-                  <BlurText
-                    text="Yayasan Islamiyyah Al Jihad Ketapang"
-                    delay={0}
-                  />
-                </strong>
-                <BlurText
-                  delay={40}
-                  text="adalah lembaga pendidikan yang berkomitmen membentuk generasi
-                unggul, berprestasi, dan berakhlak mulia. Dengan fasilitas
-                lengkap dan pengajar profesional, kami siap mengantarkan siswa
-                menuju masa depan cerah berlandaskan nilai-nilai Islami.
-                Bergabunglah bersama kami, dan jadilah bagian dari perubahan
-                menuju generasi emas!"
-                />
-              </div>
 
-              <div className="text-gray-700 leading-relaxed">
-                <BlurText text="" delay={40} />
-              </div>
+            <div className="flex-1 text-gray-700 leading-relaxed  prose max-w-none">
+              <h2 className="text-green-800 font-extrabold text-xl lg:text-start md:text-start text-center">
+                Yayasan
+              </h2>
+              <h2 className="text-green-800 font-extrabold text-xl lg:text-start md:text-start text-center mb-4">
+                Al-Jihad Islamic Center Ketapang
+              </h2>
+
+              <div
+                className="prose max-w-none text-justify "
+                dangerouslySetInnerHTML={{ __html: cleanHTMLNoWatermark }}
+              />
             </div>
           </div>
         </ScrollFadeIn>

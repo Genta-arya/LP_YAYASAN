@@ -31,7 +31,7 @@ const BacaJuga = ({ bacaJuga }) => {
                 </div>
 
                 <Link
-                  href={ "/informasi/" + item.slug}
+                  href={ "/publikasi/" + item.slug}
                   className="text-md font-medium hover:text-green-800 cursor-pointer"
                 >
                   {item.title}

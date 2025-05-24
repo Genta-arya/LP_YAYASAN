@@ -26,6 +26,21 @@ export async function generateMetadata({ params }) {
     return {
       title: `${data.title} - Yayasan Al-Jihad`,
       description: plainContent,
+      keywords: [
+        "Yayasan Al Jihad Ketapang",
+        "SMP Islam Ketapang",
+        "Yayasan ketapang",
+        "aljihad ketapang",
+        "aljihad",
+        "al jihad",
+        "Sekolah unggulan Kalimantan Barat",
+        "Pendidikan Islam Ketapang",
+        "Sekolah berbasis akhlak",
+        "Sekolah berprestasi Ketapang",
+        "Sekolah terbaik di Ketapang",
+        "Yayasan Islamiyyah Al Jihad",
+      ],
+
       openGraph: {
         title: data.title,
         description: plainContent,
@@ -60,7 +75,7 @@ const Page = async ({ params }) => {
     console.error("Error fetching berita:", error);
 
     // 🛑 Kalau server mati (tidak ada response)
-    if (error.message=== "Request failed with status code 404") {
+    if (error.message === "Request failed with status code 404") {
       return <ErrorMessage style="mt-64" />;
     } else {
       console.log(error.message);
@@ -68,14 +83,12 @@ const Page = async ({ params }) => {
         return notFound();
       }
     }
-
-    
   }
 
   // ✅ Render halaman kalau semua aman
   return (
     <div className="relative">
-      <div className="mt-48 container mx-auto px-3 xl:px-8">
+      <div className="mt-36 lg:container mx-auto xl:px-8">
         <ContentDetail data={data} />
       </div>
     </div>

@@ -25,9 +25,9 @@ const Detail = ({ data }) => {
   };
 
   return (
-    <div className="text-green-900 mt-28 mx-auto bg-gray-100">
+    <div className="text-green-900 lg:mt-28 md:mt-32 mt-32 bg-gray-100">
       {data.header && (
-        <div className="rounded-xl overflow-hidden mb-8">
+        <div className=" overflow-hidden mb-8">
           <img
             src={data.header}
             alt="Header SPMB"

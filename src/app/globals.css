@@ -12,6 +12,10 @@
   animation: marquee 15s linear infinite;
   -webkit-animation: marquee 15s linear infinite;
 }
+.swiper-pagination-bullet-active {
+  @apply bg-green-500 opacity-100 scale-125;
+}
+
 
 @theme inline {
   --color-background: var(--background);
