@@ -43,8 +43,10 @@ export const metadata = {
   icons: {
     icon: "/LOGO-SMP.ico", // Letakkan favicon.ico di /public
   },
+  
+
   openGraph: {
-    title: "Yayasan Islamiyyah Al Jihad Ketapang",
+    title: "Yayasan Islamiyyah | Al-Jihad Islamic Center Ketapang",
     description: "Sekolah unggul berbasis akhlak & prestasi",
     url: "https://www.aljihadketapang.sch.id/",
     siteName: "Yayasan Islamiyyah Al Jihad Ketapang",
@@ -61,7 +63,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yayasan Islamiyyah Al Jihad Ketapang",
+    title: "Yayasan Islamiyyah | Al-Jihad Islamic Center Ketapang",
     description: "Sekolah unggul berbasis akhlak & prestasi",
     images: ["/LOGO-SMP.ico"],
   },

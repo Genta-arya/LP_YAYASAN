@@ -25,7 +25,7 @@ export default async function sitemap() {
     const beritaResult = await GetBerita(type);
 
     const urls = beritaResult.data.map((item) => ({
-      url: `${baseUrl}/informasi/${item.slug}`,
+      url: `${baseUrl}/publikasi/${item.slug}`,
       lastModified: item.updatedAt || new Date().toISOString(),
       changefreq: "daily",
       priority: 1.0,
@@ -52,7 +52,7 @@ export default async function sitemap() {
     },
     // Tambahkan query ?q=informasi, berita, opini
     ...beritaTypes.map((tab) => ({
-      url: `${baseUrl}/informasi?q=${tab}`,
+      url: `${baseUrl}/publikasi?q=${tab}`,
       lastModified: new Date().toISOString(),
       changefreq: "daily",
       priority: 1.0,

@@ -125,13 +125,13 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
 
         <li>
           <SidebarLink
-            href="/informasi"
+            href="/publikasi"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/informasi") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
+              isActive("/publikasi") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
             }`}
           >
-            Informasi
+            Publikasi
           </SidebarLink>
         </li>
         <li>

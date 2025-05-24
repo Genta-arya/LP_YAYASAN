@@ -115,7 +115,7 @@ const ContentInformasi = ({ type }) => {
 
                 <div>
                   <Link
-                    href={`/informasi/${item.slug}`}
+                    href={`/publikasi/${item.slug}`}
                     className="lg:text-xl font-semibold hover:text-green-800 hover:cursor-pointer"
                   >
                     {item.title}

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
     };
 
     return {
-      title: `SPMB - ${data.judul}`,
+      title: `SPMB - ${data.judul} | Yayasan Al-Jihad Ketapang`,
       description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
        keywords: [
     "Yayasan Al Jihad Ketapang",
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
   ],
       metadataBase: new URL("https://www.aljihadketapang.sch.id/"),
       openGraph: {
-        title: `SPMB - ${data.judul}`,
+        title: `SPMB - ${data.judul} | Yayasan Al-Jihad Ketapang`,
         description: stripHtml(data.konten) || `Informasi SPMB untuk ${type}`,
         url: `https://www.aljihadketapang.sch.id/spmb/${type}`,
         type: "article",

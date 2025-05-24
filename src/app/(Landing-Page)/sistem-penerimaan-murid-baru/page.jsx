@@ -6,7 +6,7 @@ import useGlobalStore from "@/lib/Zustand";
 import Head from "next/head"; // ⬅️ Tambahkan ini!
 
 export const metadata = {
-  title: "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad",
+  title: "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad Ketapang",
    keywords: [
     "Yayasan Al Jihad Ketapang",
     "SMP Islam Ketapang",
@@ -25,7 +25,7 @@ export const metadata = {
     "Daftar sekarang untuk bergabung bersama Al-Jihad Islamic Center. Informasi lengkap tentang sistem penerimaan murid baru (SPMB) tersedia di sini.",
   metadataBase: new URL("https://www.aljihadketapang.sch.id/"),
   openGraph: {
-    title: "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad",
+    title: "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad Ketapang",
     description:
       "Temukan informasi terbaru tentang pendaftaran siswa baru di Yayasan Al-Jihad. Klik untuk lihat detail setiap jenjang.",
     url: "https://www.aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SPMB - Yayasan Al-Jihad",
+    title: "SPMB - Yayasan Al-Jihad Ketapang",
     description: "Informasi lengkap penerimaan murid baru.",
     images: ["https://www.aljihadketapang.sch.id/LOGO-SMP.jpg"],
   },
@@ -70,7 +70,7 @@ const Page = () => {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad",
+    "name": "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad Ketapang",
     "url": "https://www.aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
     "description": "Informasi lengkap penerimaan murid baru di Yayasan Al-Jihad Ketapang.",
   };

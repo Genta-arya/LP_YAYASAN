@@ -129,12 +129,12 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className={`${TextTitle} font-semibold ${
-                      isActive("/informasi")
+                      isActive("/publikasi")
                         ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
                         : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
-                    <Link href="/informasi">Informasi</Link>
+                    <Link href="/publikasi">Publikasi</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 

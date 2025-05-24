@@ -3,7 +3,7 @@ import InformasiPage from "./InformasiPage";
 
 
 export const metadata = {
-  title: "Yayasan Al-Jihad - Informasi",
+  title: "Yayasan Al-Jihad Ketapang - Publikasi",
   description:
     "Dapatkan informasi terbaru seputar kegiatan, pengumuman, dan berita dari Yayasan Al-Jihad Ketapang.",
   keywords: [
@@ -15,10 +15,10 @@ export const metadata = {
   ],
   authors: [{ name: "Yayasan Al-Jihad Ketapang" }],
   openGraph: {
-    title: "Yayasan Al-Jihad - Informasi",
+    title: "Yayasan Al-Jihad Ketapang - Publikasi",
     description:
       "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
-    url: "https://www.aljihadketapang.sch.id/informasi",
+    url: "https://www.aljihadketapang.sch.id/publikasi",
     siteName: "Yayasan Al-Jihad Ketapang",
     images: [
       {
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yayasan Al-Jihad - Informasi",
+    title: "Yayasan Al-Jihad Ketapang - Publikasi",
     description:
       "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
     images: ["https://www.aljihadketapang.sch.id/informasi.png"],
