@@ -27,7 +27,7 @@ const ContentDetailClient = ({ data }) => {
         const filtered = res.data.filter(
           (post) =>
             post.slug !== data.slug && // hindarin artikel sekarang
-            post.kategori.toLowerCase() !== "informasi" // hindarin kategori informasi
+            post.kategori.toLowerCase() !== "pengumuman" // hindarin kategori informasi
         );
 
         const shuffled = filtered.sort(() => 0.5 - Math.random());
