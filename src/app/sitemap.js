@@ -18,7 +18,7 @@ export default async function sitemap() {
   // ----------------------
   // Dynamic Berita Pages
   // ----------------------
-  const beritaTypes = ["berita", "informasi", "opini"];
+  const beritaTypes = ["berita", "pengumuman", "opini"];
   let beritaUrls = [];
 
   for (const type of beritaTypes) {
