@@ -1,10 +1,10 @@
 import React from "react";
 import ContentDetail from "./(components)/ContentDetail";
-
 import { getDetailBerita } from "@/Services/Berita.services";
 import ErrorMessage from "@/components/Error";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import Script from "next/script"; // 👈 Tambahkan ini
 
 // 🧠 Dynamic Metadata
 export async function generateMetadata({ params }) {
@@ -40,7 +40,6 @@ export async function generateMetadata({ params }) {
         "Sekolah terbaik di Ketapang",
         "Yayasan Islamiyyah Al Jihad",
       ],
-
       openGraph: {
         title: data.title,
         description: plainContent,
@@ -68,30 +67,57 @@ const Page = async ({ params }) => {
 
   try {
     const response = await getDetailBerita(slug);
-    console.log(response);
-
     data = response.data;
   } catch (error) {
     console.error("Error fetching berita:", error);
 
-    // 🛑 Kalau server mati (tidak ada response)
     if (error.message === "Request failed with status code 404") {
       return <ErrorMessage style="mt-64" />;
     } else {
-      console.log(error.message);
       if (error.message === "Request failed with status code 400") {
         return notFound();
       }
     }
   }
 
-  // ✅ Render halaman kalau semua aman
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://www.aljihadketapang.sch.id"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Publikasi",
+        "item": "https://www.aljihadketapang.sch.id/publikasi"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": data?.title || "Detail Informasi",
+        "item": `https://www.aljihadketapang.sch.id/publikasi/${slug}`
+      }
+    ]
+  };
+
   return (
-    <div className="relative">
-      <div className="mt-36 lg:container mx-auto xl:px-8">
-        <ContentDetail data={data} />
+    <>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <div className="relative">
+        <div className="mt-36 lg:container mx-auto xl:px-8">
+          <ContentDetail data={data} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

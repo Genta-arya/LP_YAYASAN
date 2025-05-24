@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
                   "@type": "ListItem",
                   position: 3,
                   name: "Informasi",
-                  item: "https://www.aljihadketapang.sch.id/informasi",
+                  item: "https://www.aljihadketapang.sch.id/publikasi",
                 },
               ],
             }),
