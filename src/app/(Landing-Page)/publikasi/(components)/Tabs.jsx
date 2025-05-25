@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import ContentInformasi from "./ContentInformasi";
 
 const Tabs = ({ activeTab, setActiveTab }) => {
@@ -8,6 +8,13 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
+  // ⛳ Redirect kalau selain "pengumuman"
+  useEffect(() => {
+    if (activeTab !== "pengumuman") {
+      window.location.href = "https://media.aljihadketapang.sch.id/";
+    }
+  }, [activeTab]);
 
   return (
     <div className="w-full">
@@ -29,9 +36,11 @@ const Tabs = ({ activeTab, setActiveTab }) => {
       </div>
 
       {/* Tab Content */}
-      <div className="relative overflow-visible">
-        <ContentInformasi type={activeTab}  />
-      </div>
+      {activeTab === "pengumuman" && (
+        <div className="relative overflow-visible">
+          <ContentInformasi type={activeTab} />
+        </div>
+      )}
     </div>
   );
 };
