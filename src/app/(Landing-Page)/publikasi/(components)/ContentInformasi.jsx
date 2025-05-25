@@ -66,7 +66,7 @@ const ContentInformasi = ({ type }) => {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-8">
+    <div className="gap-4 pb-8">
       {/* Konten Utama */}
       <div className="md:col-span-2 grid gap-8 self-start h-fit">
         {/* 🔍 Search Bar */}
@@ -142,7 +142,7 @@ const ContentInformasi = ({ type }) => {
                   </div>
 
                   <p
-                    className="text-gray-700 text-sm hidden lg:block"
+                    className="text-gray-700 text-sm hidden lg:block lg:w-[80%]"
                     dangerouslySetInnerHTML={{
                       __html: truncateHTMLContent(item.content, 180),
                     }}
@@ -154,7 +154,7 @@ const ContentInformasi = ({ type }) => {
         )}
       </div>
 
-      {bacaJuga.length > 0 && <BacaJuga bacaJuga={bacaJuga} />}
+
     </div>
   );
 };

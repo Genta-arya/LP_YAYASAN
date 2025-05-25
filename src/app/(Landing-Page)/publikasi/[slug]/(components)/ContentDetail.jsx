@@ -4,10 +4,11 @@ import { GetRandomBerita } from "@/Services/Berita.services";
 import BacaJuga from "../../(components)/BacaJuga";
 import Lainya from "../../(components)/Lainya";
 import { FiFacebook, FiLink, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
-import { FaTelegram, FaWhatsapp } from "react-icons/fa";
+import { FaArrowLeft, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import showErrorToast, { formatRibuan } from "@/lib/utils";
 import { CreateAnalytic, LikeHandler } from "@/Services/Analytic.services";
 import { toast } from "sonner";
+import Link from "next/link";
 
 const ContentDetailClient = ({ data }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -149,6 +150,10 @@ const ContentDetailClient = ({ data }) => {
   return (
     <div className="mx-auto py-4 px-8  flex flex-col lg:flex-row gap-8 cursor-default  lg:px-4">
       <div className="lg:w-[100%]">
+        <Link href="/publikasi" className="flex text-lg items-center gap-2 mb-4">
+          <FaArrowLeft />
+          <h1>Kembali</h1>
+        </Link>
         <h1 className="text-2xl lg:text-4xl text-green-800 md:text-3xl font-bold mb-4">
           {data.title}
         </h1>
@@ -256,9 +261,9 @@ const ContentDetailClient = ({ data }) => {
       </div>
 
       {/* Baca Juga */}
-      <aside>
+      {/* <aside>
         <Lainya bacaJuga={relatedPosts} />
-      </aside>
+      </aside> */}
     </div>
   );
 };
