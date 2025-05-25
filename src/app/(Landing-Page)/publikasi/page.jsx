@@ -17,11 +17,11 @@ export const metadata = {
   openGraph: {
     title: "Yayasan Al-Jihad Ketapang - Publikasi",
     description: "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
-    url: "https://www.aljihadketapang.sch.id/publikasi",
+    url: "https://aljihadketapang.sch.id/publikasi",
     siteName: "Yayasan Al-Jihad Ketapang",
     images: [
       {
-        url: "https://www.aljihadketapang.sch.id/informasi.png",
+        url: "https://aljihadketapang.sch.id/informasi.png",
         width: 1200,
         height: 630,
         alt: "Yayasan Al-Jihad Ketapang",
@@ -33,7 +33,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Yayasan Al-Jihad Ketapang - Publikasi",
     description: "Informasi resmi dan terbaru dari Yayasan Al-Jihad Ketapang.",
-    images: ["https://www.aljihadketapang.sch.id/informasi.png"],
+    images: ["https://aljihadketapang.sch.id/informasi.png"],
   },
 };
 
@@ -45,13 +45,13 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       "position": 1,
       "name": "Beranda",
-      "item": "https://www.aljihadketapang.sch.id"
+      "item": "https://aljihadketapang.sch.id"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Publikasi",
-      "item": "https://www.aljihadketapang.sch.id/publikasi"
+      "item": "https://aljihadketapang.sch.id/publikasi"
     }
   ]
 };

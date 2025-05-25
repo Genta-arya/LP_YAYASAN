@@ -88,19 +88,19 @@ const Page = async ({ params }) => {
         "@type": "ListItem",
         "position": 1,
         "name": "Beranda",
-        "item": "https://www.aljihadketapang.sch.id"
+        "item": "https://aljihadketapang.sch.id"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Publikasi",
-        "item": "https://www.aljihadketapang.sch.id/publikasi"
+        "item": "https://aljihadketapang.sch.id/publikasi"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": data?.title || "Detail Informasi",
-        "item": `https://www.aljihadketapang.sch.id/publikasi/${slug}`
+        "item": `https://aljihadketapang.sch.id/publikasi/${slug}`
       }
     ]
   };

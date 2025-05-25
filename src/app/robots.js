@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/', // semua halaman boleh di-crawl
     },
-    sitemap: 'https://www.aljihadketapang.sch.id/sitemap.xml',
+    sitemap: 'https://aljihadketapang.sch.id/sitemap.xml',
   };
 }

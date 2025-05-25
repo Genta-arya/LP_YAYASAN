@@ -2,7 +2,7 @@ import { GetSpmb } from "@/Services/Spmb.service";
 import { GetBerita } from "@/Services/Berita.services";
 
 export default async function sitemap() {
-  const baseUrl = "https://www.aljihadketapang.sch.id";
+  const baseUrl = "https://aljihadketapang.sch.id";
 
   // ----------------------
   // Dynamic SPMB Pages

@@ -48,7 +48,7 @@ export const metadata = {
   openGraph: {
     title: "Yayasan Islamiyyah | Al-Jihad Islamic Center Ketapang",
     description: "Sekolah unggul berbasis akhlak & prestasi",
-    url: "https://www.aljihadketapang.sch.id/",
+    url: "https://aljihadketapang.sch.id/",
     siteName: "Yayasan Islamiyyah Al Jihad Ketapang",
     images: [
       {

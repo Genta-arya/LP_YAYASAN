@@ -23,16 +23,16 @@ export const metadata = {
   ],
   description:
     "Daftar sekarang untuk bergabung bersama Al-Jihad Islamic Center. Informasi lengkap tentang sistem penerimaan murid baru (SPMB) tersedia di sini.",
-  metadataBase: new URL("https://www.aljihadketapang.sch.id/"),
+  metadataBase: new URL("https://aljihadketapang.sch.id/"),
   openGraph: {
     title: "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad Ketapang",
     description:
       "Temukan informasi terbaru tentang pendaftaran siswa baru di Yayasan Al-Jihad. Klik untuk lihat detail setiap jenjang.",
-    url: "https://www.aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
+    url: "https://aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
     type: "website",
     images: [
       {
-        url: "https://www.aljihadketapang.sch.id/LOGO-SMP.jpg",
+        url: "https://aljihadketapang.sch.id/LOGO-SMP.jpg",
         width: 1200,
         height: 630,
         alt: "SPMB Yayasan Al-Jihad",
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "SPMB - Yayasan Al-Jihad Ketapang",
     description: "Informasi lengkap penerimaan murid baru.",
-    images: ["https://www.aljihadketapang.sch.id/LOGO-SMP.jpg"],
+    images: ["https://aljihadketapang.sch.id/LOGO-SMP.jpg"],
   },
 };
 
@@ -56,13 +56,13 @@ const Page = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Beranda",
-        "item": "https://www.aljihadketapang.sch.id",
+        "item": "https://aljihadketapang.sch.id",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "SPMB",
-        "item": "https://www.aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
+        "item": "https://aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
       },
     ],
   };
@@ -71,7 +71,7 @@ const Page = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "SPMB - Penerimaan Murid Baru | Yayasan Al-Jihad Ketapang",
-    "url": "https://www.aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
+    "url": "https://aljihadketapang.sch.id/sistem-penerimaan-murid-baru",
     "description": "Informasi lengkap penerimaan murid baru di Yayasan Al-Jihad Ketapang.",
   };
 
