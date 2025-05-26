@@ -29,7 +29,7 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-white top-[41px] px-3 xl:px-8 fixed  shadow-md w-full z-50"
+        className="bg-white top-[41px] px-3 xl:px-8 pb-4 fixed  shadow-md w-full z-50"
       >
         <div className="flex justify-between items-center px-2">
           <div className="text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2">
