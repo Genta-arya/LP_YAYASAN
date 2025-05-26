@@ -10,7 +10,7 @@ const InformasiPage = () => {
   const searchParams = useSearchParams();
   const qParam = searchParams.get("q");
 
-  const allowedTabs = ["pengumuman", "berita", "opini"];
+  const allowedTabs = ["pengumuman", "media"];
   const defaultTab = allowedTabs[0]; // Default tab jika tidak ada query parameter
 
   const [activeTab, setActiveTab] = useState(null);
