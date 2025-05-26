@@ -23,14 +23,14 @@ const staticTexts = [
   },
 ];
 
-const Slider = ({datas}) => {
+const Slider = ({ datas }) => {
   const pathname = usePathname();
   const { data, fetchData } = useGlobalStore();
   const [shuffledTexts, setShuffledTexts] = useState([]);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
- const isBeranda = pathname === "/";
- useEffect(() => {
+  const isBeranda = pathname === "/";
+  useEffect(() => {
     if (!isBeranda) {
       fetchData();
     }
@@ -91,7 +91,7 @@ const Slider = ({datas}) => {
   }
 
   return (
-    <div className="relative w-full overflow-hidden  2xl:h-[880px] xl:h-[800px]    lg:mt-0 md:mt-0 mt-32">
+    <div className="relative w-full overflow-hidden 2xl:h-[1000px]     lg:mt-0 md:mt-0 mt-32">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container flex">
           {slides.map((slide, index) => (
@@ -102,7 +102,8 @@ const Slider = ({datas}) => {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[50%_65%] md:object-[50%_60%] transition-all duration-300"
+
               />
 
               <div className="absolute inset-0 top-0 md:top-32 lg:-top-80 bg-black/60 flex flex-col justify-center items-center text-center px-4"></div>
@@ -110,9 +111,9 @@ const Slider = ({datas}) => {
           ))}
         </div>
       </div>
-
+{/* md:bottom-5 bottom-3 lg:bottom-10 */}
       {/* Custom Dots */}
-      <div className="absolute  md:bottom-5 bottom-3 lg:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute lg:top-40 bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}

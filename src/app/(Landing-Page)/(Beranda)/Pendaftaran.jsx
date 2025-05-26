@@ -6,7 +6,7 @@ import React from "react";
 const Pendaftaran = () => {
   return (
     <div
-      className="relative bg-fixed 2xl:bg-[center_top_900px] md:bg-[center_top_360px] bg-[center_top_100px] pt-5  lg:bg-[center_top_1050px]
+      className="relative bg-fixed 2xl:bg-[center_top_1100px] md:bg-[center_top_360px] bg-[center_top_100px] pt-5  lg:bg-[center_top_1050px]
   bg-cover w-full 2xl:h-[400px] h-[300px] flex items-center justify-center"
       style={{
         backgroundImage: "url(/Sample.jpg)",
