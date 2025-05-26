@@ -76,7 +76,7 @@ const ContentInformasi = ({ type }) => {
           </span>
           <input
             type="text"
-            placeholder={`Cari media ${type}...`}
+            placeholder={`Cari ${type}...`}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10 pr-10 py-2 border w-full rounded focus:outline-none focus:ring-2 focus:ring-green-800"
@@ -93,7 +93,7 @@ const ContentInformasi = ({ type }) => {
 
         {filteredData.length === 0 ? (
           <p className="lg:text-center text-center mb-4">
-            Media {type} Tidak ditemukan
+            {type} Tidak ditemukan
           </p>
         ) : (
           filteredData.map((item, index) => (
@@ -153,8 +153,6 @@ const ContentInformasi = ({ type }) => {
           ))
         )}
       </div>
-
-
     </div>
   );
 };
