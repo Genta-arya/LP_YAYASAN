@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import ContentInformasi from "./ContentInformasi";
 
 const Tabs = ({ activeTab, setActiveTab }) => {
-  const allowedTabs = ["pengumuman", "berita", "opini"];
+  const allowedTabs = ["pengumuman", "media"];
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
