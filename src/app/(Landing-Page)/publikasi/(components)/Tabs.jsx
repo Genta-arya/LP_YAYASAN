@@ -19,7 +19,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   return (
     <div className="w-full">
       {/* Tab Header */}
-      <div className="flex border-b-2 mb-4">
+      <div className="flex border-b-2 mb-4 mt-3">
         {allowedTabs.map((tab) => (
           <button
             key={tab}
