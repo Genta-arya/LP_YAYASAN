@@ -17,13 +17,13 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   }, [activeTab]);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       {/* Tab Header */}
-      <div className="flex border-b-2 mb-4 mt-3">
+      <div className="flex border-b-2 mb-4  ">
         {allowedTabs.map((tab) => (
           <button
             key={tab}
-            className={`px-4 py-2 cursor-pointer font-medium ml-4 first:ml-0 ${
+            className={`px-4 py-2 cursor-pointer mt-4 font-medium ml-4 first:ml-0 ${
               activeTab === tab
                 ? "border-b-4 border-green-800 text-green-800"
                 : "text-gray-500"

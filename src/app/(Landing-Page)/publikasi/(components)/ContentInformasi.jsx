@@ -82,9 +82,15 @@ const ContentInformasi = ({ type }) => {
         </div>
 
         {filteredData.length === 0 ? (
-          <p className="lg:text-center text-center mb-4">
-            {type} Tidak ditemukan
-          </p>
+          <div>
+            <div className="flex justify-center">
+              <img src="/nofound.webp" alt="" className="w-[40%]" />
+            </div>
+
+            <p className="lg:text-center font-bold text-center mb-4">
+              Pegumuman Tidak ditemukan
+            </p>
+          </div>
         ) : (
           filteredData.map((item, index) => (
             <motion.div
