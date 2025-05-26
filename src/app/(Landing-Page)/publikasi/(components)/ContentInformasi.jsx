@@ -27,22 +27,12 @@ const ContentInformasi = ({ type }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const [error, setError] = useState(false);
-  const oppositeType = type === "berita" ? "opini" : "berita";
 
   const fetchData = async () => {
     setLoading(true);
     try {
       const responseMain = await GetBerita(type);
       setMainData(responseMain.data);
-
-      const responseBacaJuga = await GetBerita(`${oppositeType}?limit=5`);
-
-      // Filter data yang bukan kategori "informasi"
-      const filteredBacaJuga = responseBacaJuga.data.filter(
-        (item) => item.kategori.toLowerCase() !== "informasi"
-      );
-
-      setBacaJuga(filteredBacaJuga);
     } catch (error) {
       showErrorToast();
       setError(true);
