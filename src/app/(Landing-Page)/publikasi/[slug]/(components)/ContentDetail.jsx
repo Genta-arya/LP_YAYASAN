@@ -148,123 +148,128 @@ const ContentDetailClient = ({ data }) => {
   }
 
   return (
-    <div className="mx-auto py-4 px-8  flex flex-col lg:flex-row gap-8 cursor-default  lg:px-4">
-      <div className="lg:w-[100%]">
-        <Link href="/publikasi" className="flex text-lg items-center gap-2 mb-4">
-          <FaArrowLeft />
-          <h1>Kembali</h1>
-        </Link>
-        <h1 className="text-2xl lg:text-4xl text-green-800 md:text-3xl font-bold mb-4">
-          {data.title}
-        </h1>
-        <p className="text-sm text-gray-600 mb-2">
-          Ditulis oleh <strong>{data.author}</strong> pada{" "}
-          {new Date(data.createdAt).toLocaleDateString("id-ID", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
-        </p>
-        <div className="w-full border mx-auto mb-6 overflow-hidden rounded-md">
-          <img
-            src={data.thumbnail}
-            alt={data.title}
-            className="w-full max-h-[800px] object-cover rounded-md transition-transform duration-300 ease-in-out hover:scale-105"
+    <>
+      
+      <div className="mx-auto py-4 px-8  flex flex-col lg:flex-row gap-8 cursor-default  lg:px-4">
+        <div className="lg:w-[100%]">
+          {/* breadcumb */}
+
+          <h1 className="text-2xl lg:text-4xl text-green-800 md:text-3xl font-bold mb-4">
+            {data.title}
+          </h1>
+          <p className="text-sm text-gray-600 mb-2">
+            Ditulis oleh <strong>{data.author}</strong> pada{" "}
+            {new Date(data.createdAt).toLocaleDateString("id-ID", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </p>
+          <div className="flex justify-center mb-12">
+            <img
+              src={data.thumbnail}
+              alt={data.title}
+              className="w-full lg:w-[85%]  object-cover rounded-md transition-transform duration-300 ease-in-out "
+            />
+          </div>
+
+          <div
+            className="prose select-none"
+            onContextMenu={(e) => e.preventDefault()}
+            onCopy={(e) => e.preventDefault()}
+            onCut={(e) => e.preventDefault()}
+            onPaste={(e) => e.preventDefault()}
+            dangerouslySetInnerHTML={{ __html: data.content }}
           />
-        </div>
 
-        <div
-          className="prose select-none"
-          onContextMenu={(e) => e.preventDefault()}
-          onCopy={(e) => e.preventDefault()}
-          onCut={(e) => e.preventDefault()}
-          onPaste={(e) => e.preventDefault()}
-          dangerouslySetInnerHTML={{ __html: data.content }}
-        />
-
-        <div className="flex items-center mt-6 gap-4">
-          <button
-            onClick={handleLike}
-            className={`flex items-center gap-2 px-4 py-1 rounded-md text-sm ${
-              isLiked ? "bg-green-600 text-white" : "bg-gray-200 text-gray-800"
-            }`}
-          >
-            <FiThumbsUp size={18} />
-            Like ({formatRibuan(likesCount ?? 0)})
-          </button>
-
-          <button
-            onClick={handleUnlike}
-            className={`flex items-center gap-2 px-4 py-1 rounded-md text-sm ${
-              isUnliked ? "bg-red-600 text-white" : "bg-gray-200 text-gray-800"
-            }`}
-          >
-            <FiThumbsDown size={18} />
-            Unlike ({formatRibuan(unlikesCount ?? 0)})
-          </button>
-        </div>
-
-        {/* Tombol Bagikan */}
-        <div className="mt-6 pb-8">
-          <p className="text-sm text-gray-600 mb-2">Bagikan ke:</p>
-          <div className="flex flex-wrap items-center gap-1">
+          <div className="flex items-center mt-6 gap-4">
             <button
-              onClick={handleCopyUrl}
-              className="bg-gray-600 hover:bg-gray-700 cursor-pointer text-white px-3 py-1 rounded-md text-sm"
+              onClick={handleLike}
+              className={`flex items-center gap-2 px-4 py-1 rounded-md text-sm ${
+                isLiked
+                  ? "bg-green-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
             >
-              <div className="flex items-center gap-2">
-                <FiLink size={20} />
-                <p>Copy Url</p>
-              </div>
+              <FiThumbsUp size={18} />
+              Like ({formatRibuan(likesCount ?? 0)})
             </button>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                currentUrl
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm"
+
+            <button
+              onClick={handleUnlike}
+              className={`flex items-center gap-2 px-4 py-1 rounded-md text-sm ${
+                isUnliked
+                  ? "bg-red-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
             >
-              <div className="flex items-center gap-2">
-                <FiFacebook size={20} />
-                <p>Facebook</p>
-              </div>
-            </a>
-            <a
-              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                data.title + " " + currentUrl
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md text-sm"
-            >
-              <div className="flex items-center gap-2">
-                <FaWhatsapp size={20} />
-                <p>WhatsApp</p>
-              </div>
-            </a>
-            <a
-              href={`https://t.me/share/url?url=${encodeURIComponent(
-                currentUrl
-              )}&text=${encodeURIComponent(data.title)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm"
-            >
-              <div className="flex items-center gap-2">
-                <FaTelegram size={20} />
-                <p>Telegram</p>
-              </div>
-            </a>
+              <FiThumbsDown size={18} />
+              Unlike ({formatRibuan(unlikesCount ?? 0)})
+            </button>
+          </div>
+
+          {/* Tombol Bagikan */}
+          <div className="mt-6 pb-8">
+            <p className="text-sm text-gray-600 mb-2">Bagikan ke:</p>
+            <div className="flex flex-wrap items-center gap-1">
+              <button
+                onClick={handleCopyUrl}
+                className="bg-gray-600 hover:bg-gray-700 cursor-pointer text-white px-3 py-1 rounded-md text-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <FiLink size={20} />
+                  <p>Copy Url</p>
+                </div>
+              </button>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                  currentUrl
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <FiFacebook size={20} />
+                  <p>Facebook</p>
+                </div>
+              </a>
+              <a
+                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                  data.title + " " + currentUrl
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md text-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <FaWhatsapp size={20} />
+                  <p>WhatsApp</p>
+                </div>
+              </a>
+              <a
+                href={`https://t.me/share/url?url=${encodeURIComponent(
+                  currentUrl
+                )}&text=${encodeURIComponent(data.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <FaTelegram size={20} />
+                  <p>Telegram</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Baca Juga */}
-      {/* <aside>
+        {/* Baca Juga */}
+        {/* <aside>
         <Lainya bacaJuga={relatedPosts} />
       </aside> */}
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import ErrorMessage from "@/components/Error";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Script from "next/script"; // 👈 Tambahkan ini
+import Breadcumb from "./(components)/Breadcumb";
 
 // 🧠 Dynamic Metadata
 export async function generateMetadata({ params }) {
@@ -113,7 +114,8 @@ const Page = async ({ params }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <div className="relative">
-        <div className="mt-36 lg:container mx-auto xl:px-8">
+        <Breadcumb data={data} />
+        <div className="mt-7 lg:container mx-auto xl:px-8">
           <ContentDetail data={data} />
         </div>
       </div>
