@@ -6,7 +6,7 @@ const Breadcumb = ({ data }) => {
   return (
     <div className="mt-36 border-b">
       <div className="lg:px-10 px-8 bg-green-700 py-2">
-        <p className="text-white text-xs lg:text-sm font-semibold">
+        <p className="text-white text-xs lg:text-sm">
           <FaHome className="inline mr-1 mb-1" />
           <Link href="/" className="hover:underline">Beranda</Link>
           {" » "}
