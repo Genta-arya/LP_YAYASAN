@@ -115,7 +115,7 @@ const Page = async ({ params }) => {
       />
       <div className="relative">
         <Breadcumb data={data} />
-        <div className="mt-7 lg:container mx-auto xl:px-8">
+        <div className="mt-3 lg:mt-7 lg:container mx-auto xl:px-8">
           <ContentDetail data={data} />
         </div>
       </div>
