@@ -155,8 +155,8 @@ const Navbar = () => {
                     href="/gallery"
                     className={`${TextTitle} font-semibold ${
                       isActive("/gallery")
-                        ? "bg-gray-200"
-                        : "hover:bg-gray-100"
+                        ? "text-green-800 border-b-4 hover:opacity-75 hover:text-green-800  border-green-600"
+                        : "hover:opacity-75 hover:text-green-800 text-black"
                     }`}
                   >
                     Gallery
