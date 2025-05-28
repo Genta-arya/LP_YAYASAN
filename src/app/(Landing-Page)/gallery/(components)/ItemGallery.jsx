@@ -94,11 +94,6 @@ const ItemGallery = () => {
         thumbnails={{ width: 100, height: 100 }}
         carousel={{ finite: true }}
         render={{
-          slideFooter: ({ slide }) => (
-            <div className="text-white text-sm bg-black/60 px-3 py-1 rounded-md mx-auto mb-4 w-fit">
-             {slide.index + 1} dari {images.length}
-            </div>
-          ),
           thumbnail: ({ slide, active }) => (
             <img
               src={slide.src}
