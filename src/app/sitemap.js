@@ -45,6 +45,12 @@ export default async function sitemap() {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/gallery`,
+      lastModified: new Date().toISOString(),
+      changefreq: "daily",
+      priority: 1.0,
+    },
+    {
       url: `${baseUrl}/sistem-penerimaan-murid-baru`,
       lastModified: new Date().toISOString(),
       changefreq: "daily",

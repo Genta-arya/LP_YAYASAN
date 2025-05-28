@@ -152,9 +152,9 @@ const Navbar = () => {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/#"
+                    href="/gallery"
                     className={`${TextTitle} font-semibold ${
-                      isActive("/video-corner")
+                      isActive("/gallery")
                         ? "bg-gray-200"
                         : "hover:bg-gray-100"
                     }`}
