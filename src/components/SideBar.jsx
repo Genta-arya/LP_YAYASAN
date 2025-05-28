@@ -149,10 +149,10 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
         </li>
         <li>
           <SidebarLink
-            href="/video-corner"
+            href="/gallery"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/video-corner") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
+              isActive("/gallery") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
             }`}
           >
             Gallery
