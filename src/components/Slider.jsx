@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import useGlobalStore from "@/lib/Zustand";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const staticTexts = [
   {
@@ -91,37 +92,38 @@ const Slider = ({ datas }) => {
   }
 
   return (
-    <div className="relative w-full overflow-hidden 2xl:h-[1000px]     lg:mt-0 md:mt-0 mt-32">
+    <div className="relative w-full overflow-hidden  lg:mt-36 md:mt-36 mt-26">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container flex">
           {slides.map((slide, index) => (
             <div
-              className="embla__slide flex-[0_0_100%] relative"
+              className="embla__slide flex-[0_0_100%]   relative"
               key={slide.id}
             >
-              <img
+              <Image
                 src={slide.image}
                 alt={slide.title}
-              className="w-full h-full object-cover object-[50%_65%] md:object-[50%_60%] transition-all duration-300"
-
+                width={1920}
+                height={840}
+                priority={index === 0}
+                className="w-full h-full object-cover transition-all duration-300"
               />
 
-              <div className="absolute inset-0 top-0 md:top-32 lg:-top-80 bg-black/60 flex flex-col justify-center items-center text-center px-4"></div>
+              <div className="absolute inset-0 top-0 md:top-0 lg:-top-80 bg-black/30 flex flex-col justify-center items-center text-center px-4"></div>
             </div>
           ))}
         </div>
       </div>
-{/* md:bottom-5 bottom-3 lg:bottom-10 */}
-      {/* Custom Dots */}
-      <div className="absolute lg:top-40 bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      
+      <div className="absolute lg:bottom-10 bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => emblaApi && emblaApi.scrollTo(index)}
             className={`rounded-full cursor-pointer transition-all duration-300 ${
               selectedIndex === index
-                ? "bg-yellow-500  opacity-100  w-12 h-3 "
-                : "bg-white w-3 h-3 "
+                ? "bg-yellow-500  opacity-100  w-12 lg:h-3 h-2 "
+                : "bg-white w-3 lg:h-3 h-2"
             } hover:opacity-80`}
           />
         ))}

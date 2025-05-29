@@ -32,18 +32,15 @@ const Navbar = () => {
         className="bg-white top-[41px] px-3 xl:px-8 pb-4 fixed  shadow-md w-full z-50"
       >
         <div className="flex justify-between items-center px-2">
-          <div className="text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2">
+          <div
+            onClick={() => (window.location.href = "/")}
+            className="hover:cursor-pointer text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2"
+          >
             <img
-              src="/LOGO-SMP.jpg"
+              src="/Logoweb.png"
               alt="Logo"
-              className="w-20 md:w-20 rounded-full"
+              className="w-[60%] mt-2 rounded-full"
             />
-            <div className="flex flex-col gap-1">
-              <h1 className="text-green-800">Yayasan Islamiyah</h1>
-              <p className="text-green-800 2xl:text-xl lg:text-base md:text-xl text-sm ">
-                Al-Jihad Islamic Center
-              </p>
-            </div>
           </div>
 
           {/* Desktop Menu */}

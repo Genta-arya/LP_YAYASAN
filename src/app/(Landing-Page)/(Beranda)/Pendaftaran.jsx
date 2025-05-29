@@ -6,8 +6,7 @@ import React from "react";
 const Pendaftaran = () => {
   return (
     <div
-      className="relative bg-fixed 2xl:bg-[center_top_1100px] md:bg-[center_top_360px] bg-[center_top_100px] pt-5  lg:bg-[center_top_1050px]
-  bg-cover w-full 2xl:h-[400px] h-[300px] flex items-center justify-center"
+      className="relative bg-cover bg-no-repeat bg-center w-full h-[400px] flex items-center justify-center"
       style={{
         backgroundImage: "url(/Sample.jpg)",
       }}
@@ -23,9 +22,7 @@ const Pendaftaran = () => {
         </p>
 
         <button className="button-shine bg-yellow-400 cursor-pointer hover:opacity-80 text-black w-40 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">
-          <Link href="/sistem-penerimaan-murid-baru">
-            Daftar Sekarang
-          </Link>
+          <Link href="/sistem-penerimaan-murid-baru">Daftar Sekarang</Link>
         </button>
       </div>
     </div>
