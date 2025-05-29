@@ -32,7 +32,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="mt-40 lg:px-4">
+    <div className="lg:mt-40 mt-28 md:mt-32 lg:px-4">
       <ItemGallery />
       <LokasiMap />
     </div>
