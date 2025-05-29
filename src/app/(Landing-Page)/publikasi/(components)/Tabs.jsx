@@ -19,14 +19,14 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   return (
     <div className="w-full ">
       {/* Tab Header */}
-      <div className="flex border-b-2 mb-4  ">
+      <div className="flex justify-center border-b-2 mb-4  ">
         {allowedTabs.map((tab) => (
           <button
             key={tab}
             className={`px-4 py-2 cursor-pointer mt-4 font-medium ml-4 first:ml-0 ${
               activeTab === tab
-                ? "border-b-4 border-green-800 text-green-800"
-                : "text-gray-500"
+                ? "border-b-6 border-green-800 text-green-800 w-full"
+                : "text-gray-500 w-full"
             }`}
             onClick={() => handleTabClick(tab)}
           >

@@ -38,7 +38,7 @@ const InformasiPage = () => {
   if (!activeTab) return null;
 
   return (
-    <div className="mt-36 px-3 xl:px-8">
+    <div className="lg:mt-42 md:mt-36 mt-24 px-3 xl:px-8">
       <Tabs activeTab={activeTab} setActiveTab={handleTabChange} />
     </div>
   );

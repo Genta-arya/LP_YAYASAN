@@ -12,7 +12,7 @@ const Footer = () => {
           <Image
           src="/Logoweb.png"
           alt="Logo"
-          width={300}
+          width={400}
           height={300}
           className="mb-2 bg-white"
         />
