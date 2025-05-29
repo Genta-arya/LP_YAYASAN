@@ -178,7 +178,7 @@ const Navbar = () => {
           {/* Hamburger Icon */}
           <button
             onClick={toggleSidebar}
-            className="lg:hidden 2xl:hidden relative w-8 h-8 flex flex-col justify-center items-center z-50"
+            className="lg:hidden 2xl:hidden relative w-8 h-8 mt-4 mr-4 flex flex-col justify-center items-center z-50"
           >
             <span
               className={`absolute h-1 w-8 bg-green-800 rounded transition-transform duration-300 ${
