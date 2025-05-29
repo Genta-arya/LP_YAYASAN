@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 
@@ -5,15 +6,16 @@ const Footer = () => {
   return (
     <footer className="bg-green-800 text-white py-8 border-t-8 border-yellow-400  ">
       <div className="px-3 xl:px-8  ">
+       
         <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo or Title */}
-          <div className="text-center md:text-left">
-            <h1 className="text-lg md:text-2xl font-bold mb-2">
-              Yayasan AL-JIHAD
-            </h1>
-            <p className="text-sm">Mendidik Generasi Berakhlak & Berilmu</p>
-          </div>
-
+          <Image
+          src="/Logoweb.png"
+          alt="Logo"
+          width={300}
+          height={300}
+          className="mb-2 bg-white"
+        />
           {/* Navigation Links */}
           <div className="flex justify-center space-x-6">
            
