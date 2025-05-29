@@ -33,10 +33,11 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center px-2">
           <div
-            onClick={() => (window.location.href = "/")}
+          
             className="hover:cursor-pointer text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2"
           >
             <img
+              onClick={() => (window.location.href = "/")}
               src="/Logoweb.png"
               alt="Logo"
               className="w-[60%] mt-2 rounded-full"
