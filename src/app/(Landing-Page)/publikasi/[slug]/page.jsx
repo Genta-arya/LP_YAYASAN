@@ -113,8 +113,8 @@ const Page = async ({ params }) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <div className="relative">
-        <Breadcumb data={data} />
+      <div className="relative lg:mt-46 mt-32 md:mt-36">
+        {/* <Breadcumb data={data} /> */}
         <div className="mt-3 lg:mt-7 lg:container mx-auto xl:px-8">
           <ContentDetail data={data} />
         </div>
