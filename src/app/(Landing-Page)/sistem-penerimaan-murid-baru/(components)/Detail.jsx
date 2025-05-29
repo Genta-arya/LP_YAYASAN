@@ -3,6 +3,9 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+
 import LokasiMap from "../../(Beranda)/Maps";
 import Download from "yet-another-react-lightbox/plugins/download";
 const Detail = ({ data }) => {
@@ -71,7 +74,25 @@ const Detail = ({ data }) => {
       {data.konten && (
         <div
           className="prose lg:prose-lg max-w-none text-left md:ml-0 lg:px-8 px-4 ml-4 mb-8 mt-8 md:px-8 font-bold text-gray-500"
-          dangerouslySetInnerHTML={{ __html: data.konten }}
+          dangerouslySetInnerHTML={{
+            __html: (() => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(data.konten, "text/html");
+
+              // Cari elemen yang mengandung "Powered by Froala Editor"
+              [...doc.body.querySelectorAll("*")].forEach((el) => {
+                if (
+                  el.textContent
+                    ?.toLowerCase()
+                    .includes("powered by froala editor")
+                ) {
+                  el.remove(); // langsung hapus elemennya
+                }
+              });
+
+              return doc.body.innerHTML;
+            })(),
+          }}
         />
       )}
 
@@ -80,13 +101,15 @@ const Detail = ({ data }) => {
         close={() => setOpen(false)}
         slides={images}
         index={index}
-        plugins={[Zoom, Download]}
+        carousel={{ finite: true }}
+        plugins={[Zoom, Download, Thumbnails]} // tambahin ini
         animation={{ duration: 300 }}
         zoom={{
           maxZoomPixelRatio: 2,
           scrollToZoom: true,
         }}
       />
+
       <LokasiMap />
     </div>
   );
