@@ -40,7 +40,7 @@ const Navbar = () => {
               onClick={() => (window.location.href = "/")}
               src="/Logoweb.png"
               alt="Logo"
-              className="w-[60%] mt-2 rounded-full"
+              className="w-[60%] lg:w-[40%] mt-2 rounded-full"
             />
           </div>
 
