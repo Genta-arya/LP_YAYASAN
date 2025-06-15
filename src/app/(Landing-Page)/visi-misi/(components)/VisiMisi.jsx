@@ -35,7 +35,7 @@ const VisiMisi = () => {
         </div>
     </div>
     <div className='flex flex-col lg:pb-8 items-center justify-center gap-4 '>
-      <img src={data?.imgVisiMisi} alt="Logo" className='object-cover lg:w-[50%] w-full' />
+      <img src={data?.imgVisiMisi} alt="Logo" className='object-cover  w-full' />
     </div>
     </>
   )

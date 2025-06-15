@@ -36,7 +36,7 @@ const TentangKami = () => {
         </div>
     </div>
     <div className='flex flex-col items-center justify-center gap-4 lg:pb-8 '>
-      <img src={data?.ImgTentangKami} alt="Logo" className='object-cover lg:w-[50%] w-full' />
+      <img src={data?.ImgTentangKami} alt="Logo" className='object-cover  w-full' />
     </div>
     </>
   )
