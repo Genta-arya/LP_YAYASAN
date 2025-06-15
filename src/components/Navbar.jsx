@@ -74,9 +74,10 @@ const Navbar = () => {
                     <ul className="flex flex-col space-y-2 w-64 font-bold">
                       <li>
                         <NavigationMenuLink
+                          href="/tentang-kami"
                           className={`block px-4 py-2 rounded ${
                             isActive("/tentang-kami")
-                              ? "bg-gray-200"
+                              ? "bg-green-200"
                               : "hover:bg-gray-100"
                           }`}
                         >
@@ -85,10 +86,10 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink
-                          href="/#"
+                          href="/sejarah"
                           className={`block px-4 py-2 rounded ${
                             isActive("/sejarah")
-                              ? "bg-gray-200"
+                              ? "bg-green-200"
                               : "hover:bg-gray-100"
                           }`}
                         >
@@ -100,7 +101,7 @@ const Navbar = () => {
                           href="/#"
                           className={`block px-4 py-2 rounded ${
                             isActive("/arsip")
-                              ? "bg-gray-200"
+                              ? "bg-green-200"
                               : "hover:bg-gray-100"
                           }`}
                         >
@@ -109,10 +110,10 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink
-                          href="/#"
+                          href="/visi-misi"
                           className={`block px-4 py-2 rounded ${
                             isActive("/visi-misi")
-                              ? "bg-gray-200"
+                              ? "bg-green-200"
                               : "hover:bg-gray-100"
                           }`}
                         >

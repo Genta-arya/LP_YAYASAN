@@ -81,7 +81,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 href="/tentang-kami"
                 setSidebarOpen={setSidebarOpen}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive("/tentang-kami") ? "bg-green-50 text-green-800" : "hover:bg-gray-100"
+                  isActive("/tentang-kami") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
                 }`}
               >
                 Tentang Kami
@@ -92,7 +92,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 href="/sejarah"
                 setSidebarOpen={setSidebarOpen}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive("/sejarah") ? "bg-green-50 text-green-800" : "hover:bg-gray-100"
+                  isActive("/sejarah") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
                 }`}
               >
                 Sejarah
@@ -103,7 +103,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 href="/arsip"
                 setSidebarOpen={setSidebarOpen}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive("/arsip") ? "bg-green-50 text-green-800" : "hover:bg-gray-100"
+                  isActive("/arsip") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
                 }`}
               >
                 Arsip
@@ -114,7 +114,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 href="/visi-misi"
                 setSidebarOpen={setSidebarOpen}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive("/visi-misi") ? "bg-green-50 text-green-800" : "hover:bg-gray-100"
+                  isActive("/visi-misi") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
                 }`}
               >
                 Visi Misi

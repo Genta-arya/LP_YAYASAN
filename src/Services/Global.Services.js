@@ -8,3 +8,14 @@ export const getDataGlobal = async () => {
     throw error;
   }
 };
+
+
+export const getDataProfile = async () => {
+  try {
+    const response = await axiosInstance.get("/setting/profil");
+    return response.data;
+  } catch (error) {
+    throw error;
+    
+  }
+}

@@ -50,6 +50,24 @@ export default async function sitemap() {
       changefreq: "daily",
       priority: 1.0,
     },
+     {
+      url: `${baseUrl}/tentang-kami`,
+      lastModified: new Date().toISOString(),
+      changefreq: "daily",
+      priority: 1.0,
+    },
+     {
+      url: `${baseUrl}/sejarah`,
+      lastModified: new Date().toISOString(),
+      changefreq: "daily",
+      priority: 1.0,
+    },
+     {
+      url: `${baseUrl}/visi-misi`,
+      lastModified: new Date().toISOString(),
+      changefreq: "daily",
+      priority: 1.0,
+    },
     {
       url: `${baseUrl}/sistem-penerimaan-murid-baru`,
       lastModified: new Date().toISOString(),

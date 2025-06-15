@@ -75,8 +75,8 @@ const ItemGallery = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
                 <Image
-                  width={500}
-                  height={500}
+                  width={1000}
+                  height={1000}
                   src={img.url_image}
                   alt={`Galeri ${img.order}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
