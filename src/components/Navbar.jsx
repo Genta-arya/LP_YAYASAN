@@ -72,7 +72,7 @@ const Navbar = () => {
                     className={`bg-white text-black p-2 ${TextTitle} rounded-md shadow-md`}
                   >
                     <ul className="flex flex-col space-y-2 w-64 font-bold">
-                      <li>
+                      {/* <li>
                         <NavigationMenuLink
                           href="/tentang-kami"
                           className={`block px-4 py-2 rounded ${
@@ -83,7 +83,7 @@ const Navbar = () => {
                         >
                           Tentang Kami
                         </NavigationMenuLink>
-                      </li>
+                      </li> */}
                       <li>
                         <NavigationMenuLink
                           href="/sejarah"
@@ -96,18 +96,7 @@ const Navbar = () => {
                           Sejarah
                         </NavigationMenuLink>
                       </li>
-                      <li>
-                        <NavigationMenuLink
-                          href="/#"
-                          className={`block px-4 py-2 rounded ${
-                            isActive("/arsip")
-                              ? "bg-green-200"
-                              : "hover:bg-gray-100"
-                          }`}
-                        >
-                          Arsip
-                        </NavigationMenuLink>
-                      </li>
+                    
                       <li>
                         <NavigationMenuLink
                           href="/visi-misi"
@@ -118,6 +107,18 @@ const Navbar = () => {
                           }`}
                         >
                           Visi Misi
+                        </NavigationMenuLink>
+                      </li>
+                        <li>
+                        <NavigationMenuLink
+                          href="/#"
+                          className={`block px-4 py-2 rounded ${
+                            isActive("/arsip")
+                              ? "bg-green-200"
+                              : "hover:bg-gray-100"
+                          }`}
+                        >
+                          Arsip
                         </NavigationMenuLink>
                       </li>
                     </ul>

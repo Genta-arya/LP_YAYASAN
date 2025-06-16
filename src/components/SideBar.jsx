@@ -76,7 +76,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
               profilOpen ? "max-h-[500px]" : "max-h-0"
             }`}
           >
-            <li>
+            {/* <li>
               <SidebarLink
                 href="/tentang-kami"
                 setSidebarOpen={setSidebarOpen}
@@ -86,7 +86,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
               >
                 Tentang Kami
               </SidebarLink>
-            </li>
+            </li> */}
             <li>
               <SidebarLink
                 href="/sejarah"
@@ -98,17 +98,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 Sejarah
               </SidebarLink>
             </li>
-            <li>
-              <SidebarLink
-                href="/arsip"
-                setSidebarOpen={setSidebarOpen}
-                className={`block px-3 py-2 rounded-md ${
-                  isActive("/arsip") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
-                }`}
-              >
-                Arsip
-              </SidebarLink>
-            </li>
+           
             <li>
               <SidebarLink
                 href="/visi-misi"
@@ -118,6 +108,17 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 }`}
               >
                 Visi Misi
+              </SidebarLink>
+            </li>
+             <li>
+              <SidebarLink
+                href="/arsip"
+                setSidebarOpen={setSidebarOpen}
+                className={`block px-3 py-2 rounded-md ${
+                  isActive("/arsip") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
+                }`}
+              >
+                Arsip
               </SidebarLink>
             </li>
           </ul>
