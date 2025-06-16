@@ -39,7 +39,7 @@ const Sejarah = () => {
       </div>
       {data.kontentTentangKami && (
         <div
-          className="prose lg:prose-lg w-full bg-white shadow-xl py-8 flex justify-center  "
+          className="prose lg:prose-lg  bg-white shadow-xl py-8 flex justify-center  "
           dangerouslySetInnerHTML={{
             __html: (() => {
               const parser = new DOMParser();
