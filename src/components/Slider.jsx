@@ -92,7 +92,7 @@ const Slider = ({ datas }) => {
   }
 
   return (
-    <div className="relative w-full overflow-hidden  lg:mt-36 md:mt-36 mt-26">
+    <div className="relative w-full overflow-hidden  lg:mt-24 md:mt-36 mt-26">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container flex">
           {slides.map((slide, index) => (

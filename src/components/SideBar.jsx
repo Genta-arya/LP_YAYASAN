@@ -87,7 +87,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 Tentang Kami
               </SidebarLink>
             </li> */}
-            <li>
+            {/* <li>
               <SidebarLink
                 href="/sejarah"
                 setSidebarOpen={setSidebarOpen}
@@ -97,7 +97,7 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
               >
                 Sejarah
               </SidebarLink>
-            </li>
+            </li> */}
            
             <li>
               <SidebarLink

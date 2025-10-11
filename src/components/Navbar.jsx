@@ -84,7 +84,7 @@ const Navbar = () => {
                           Tentang Kami
                         </NavigationMenuLink>
                       </li> */}
-                      <li>
+                      {/* <li>
                         <NavigationMenuLink
                           href="/sejarah"
                           className={`block px-4 py-2 rounded ${
@@ -95,7 +95,7 @@ const Navbar = () => {
                         >
                           Sejarah
                         </NavigationMenuLink>
-                      </li>
+                      </li> */}
                     
                       <li>
                         <NavigationMenuLink
