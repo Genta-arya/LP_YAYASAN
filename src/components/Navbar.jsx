@@ -32,10 +32,7 @@ const Navbar = () => {
         className="bg-white top-[41px] px-3 xl:px-8 pb-4 fixed  shadow-md w-full z-50"
       >
         <div className="flex justify-between items-center px-2">
-          <div
-          
-            className="hover:cursor-pointer text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2"
-          >
+          <div className="hover:cursor-pointer text-lg 2xl:text-3xl lg:text-xl md:text-2xl font-bold flex items-center gap-2">
             <img
               onClick={() => (window.location.href = "/")}
               src="/Logoweb.png"
@@ -96,7 +93,7 @@ const Navbar = () => {
                           Sejarah
                         </NavigationMenuLink>
                       </li> */}
-                    
+
                       <li>
                         <NavigationMenuLink
                           href="/visi-misi"
@@ -109,7 +106,7 @@ const Navbar = () => {
                           Visi Misi
                         </NavigationMenuLink>
                       </li>
-                        <li>
+                      <li>
                         <NavigationMenuLink
                           href="/#"
                           className={`block px-4 py-2 rounded ${
@@ -165,9 +162,11 @@ const Navbar = () => {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="/#"
+                    href="https://eperpus.aljihadketapang.sch.id/"
                     className={`${TextTitle} font-semibold ${
-                      isActive("/http://eperpus.aljihadketapang.sch.id/") ? "bg-gray-200" : "hover:bg-gray-100"
+                      isActive("/https://eperpus.aljihadketapang.sch.id/")
+                        ? "bg-gray-200"
+                        : "hover:bg-gray-100"
                     }`}
                   >
                     Perpustakaan

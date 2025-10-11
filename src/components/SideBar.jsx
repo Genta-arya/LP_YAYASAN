@@ -29,7 +29,10 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
     >
       <div className="flex justify-end mt-4 mr-4">
         <button onClick={toggleSidebar}>
-          <FiX size={28} className="text-green-800 hover:text-green-600 transition" />
+          <FiX
+            size={28}
+            className="text-green-800 hover:text-green-600 transition"
+          />
         </button>
       </div>
       <div className="flex justify-center items-center p-4 border-b">
@@ -50,7 +53,9 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
             href="/"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
+              isActive("/")
+                ? "bg-green-100 text-green-800 font-bold"
+                : "hover:bg-gray-100"
             }`}
           >
             Beranda
@@ -98,24 +103,28 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
                 Sejarah
               </SidebarLink>
             </li> */}
-           
+
             <li>
               <SidebarLink
                 href="/visi-misi"
                 setSidebarOpen={setSidebarOpen}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive("/visi-misi") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
+                  isActive("/visi-misi")
+                    ? "bg-green-200 text-green-800"
+                    : "hover:bg-gray-100"
                 }`}
               >
                 Visi Misi
               </SidebarLink>
             </li>
-             <li>
+            <li>
               <SidebarLink
                 href="/arsip"
                 setSidebarOpen={setSidebarOpen}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive("/arsip") ? "bg-green-200 text-green-800" : "hover:bg-gray-100"
+                  isActive("/arsip")
+                    ? "bg-green-200 text-green-800"
+                    : "hover:bg-gray-100"
                 }`}
               >
                 Arsip
@@ -129,7 +138,9 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
             href="/publikasi"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/publikasi") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
+              isActive("/publikasi")
+                ? "bg-green-100 text-green-800 font-bold"
+                : "hover:bg-gray-100"
             }`}
           >
             Publikasi
@@ -153,7 +164,9 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
             href="/gallery"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/gallery") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
+              isActive("/gallery")
+                ? "bg-green-100 text-green-800 font-bold"
+                : "hover:bg-gray-100"
             }`}
           >
             Gallery
@@ -161,10 +174,12 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
         </li>
         <li>
           <SidebarLink
-            href="/http://eperpus.aljihadketapang.sch.id/"
+            href="https://eperpus.aljihadketapang.sch.id/"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
-              isActive("/kontak") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
+              isActive("/kontak")
+                ? "bg-green-100 text-green-800 font-bold"
+                : "hover:bg-gray-100"
             }`}
           >
             Perpustakaan
