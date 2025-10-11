@@ -167,10 +167,10 @@ const Navbar = () => {
                   <NavigationMenuLink
                     href="/#"
                     className={`${TextTitle} font-semibold ${
-                      isActive("/kontak") ? "bg-gray-200" : "hover:bg-gray-100"
+                      isActive("/http://eperpus.aljihadketapang.sch.id/") ? "bg-gray-200" : "hover:bg-gray-100"
                     }`}
                   >
-                    Kontak
+                    Perpustakaan
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
