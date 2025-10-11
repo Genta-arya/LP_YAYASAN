@@ -161,13 +161,13 @@ const SideBar = ({ sidebarOpen, toggleSidebar, isActive, setSidebarOpen }) => {
         </li>
         <li>
           <SidebarLink
-            href="/kontak"
+            href="/http://eperpus.aljihadketapang.sch.id/"
             setSidebarOpen={setSidebarOpen}
             className={`block px-3 py-2 rounded-lg transition ${
               isActive("/kontak") ? "bg-green-100 text-green-800 font-bold" : "hover:bg-gray-100"
             }`}
           >
-            Kontak
+            Perpustakaan
           </SidebarLink>
         </li>
       </ul>
