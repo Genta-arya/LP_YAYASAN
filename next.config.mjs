@@ -4,5 +4,4 @@ const nextConfig = {
     domains: ["www.facebook.com" , "cloud.mystorages.my.id" , "clouds.mystorages.my.id", "bucket.mgentaarya.my.id"],
   },
 };
-
 export default nextConfig;
